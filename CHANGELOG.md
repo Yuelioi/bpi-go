@@ -4,6 +4,8 @@
 
 ## [Unreleased]（未发布）
 
+## [0.1.0] - 2026-08-11
+
 ### 新增
 
 - 符合 Go 习惯且相互隔离的客户端基础设施，支持显式凭据、有界 HTTP 执行、上下文传播、敏感日志清理、类型化错误和可恢复的解码失败。
@@ -27,3 +29,6 @@
 - 哔哩哔哩 Cookie 不会附加到无关主机。
 - 包含秘密的查询字段和原始响应体不会进入日志或普通错误格式。
 - 实时 Probe 无法执行登录会话、写入或消费类契约。
+
+[Unreleased]: https://github.com/Yuelioi/bpi-go/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/Yuelioi/bpi-go/releases/tag/v0.1.0
