@@ -476,7 +476,11 @@ func contractTreeFiles(root string) (map[string][]byte, error) {
 		if err != nil {
 			return err
 		}
-		result[filepath.ToSlash(relative)] = data
+		relative = filepath.ToSlash(relative)
+		if strings.EqualFold(filepath.Ext(relative), ".json") {
+			data = bytes.ReplaceAll(data, []byte("\r\n"), []byte("\n"))
+		}
+		result[relative] = data
 		return nil
 	})
 	if err != nil {

@@ -38,7 +38,7 @@ go run ./cmd/bpi-sourcegen `
   -check
 ```
 
-该命令会按字节比较 `source.json`、`source.lock.json` 和全部 642 个已复制的契约及 fixture 文件，同时拒绝使用存在未提交相关变更的 Rust 源码。
+该命令会比较 `source.json`、`source.lock.json` 和全部 642 个已复制的契约及 fixture 文件，同时拒绝使用存在未提交相关变更的 Rust 源码。JSON 文本会先将 CRLF 规范化为 LF，再进行逐字节比较；其他文件保持原始字节，因此结果在 Windows 与 Linux 上一致。
 
 ## 有意更新上游基准
 

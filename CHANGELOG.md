@@ -24,6 +24,10 @@
 - 移除 `LoadAccountProfile`、`AccountProfile` 和 TOML 解析依赖；配置文件、环境变量及秘密管理由调用方负责，SDK 只接收显式 `Account` 或原始 Cookie 请求头。
 - 实时 Probe 改为通过 `BPI_COOKIE_NORMAL` 和 `BPI_COOKIE_VIP` 接收可选测试凭据，不再依赖账户文件格式。
 
+### 修复
+
+- 修复契约快照锁在全新检出时受 CRLF/LF 差异影响的问题，并确保 CI 使用 Go 1.25 系列的最新补丁版本。
+
 ### 安全
 
 - 哔哩哔哩 Cookie 不会附加到无关主机。

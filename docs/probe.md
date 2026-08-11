@@ -79,4 +79,6 @@ go run ./cmd/bpi-sourcegen `
   -check
 ```
 
+源码同步器会将 JSON 文本的 CRLF 规范化为 LF，再进行逐字节比较和写入；非 JSON 文件保持原始字节。该规则使契约快照及其 SHA-256 锁在 Windows 与 Linux 的全新检出中保持一致。
+
 对于已经明确评审的上游更新，去掉 `-check` 并添加 `-sync-contracts`。同步命令会写入已变化或缺失的文件，但拒绝删除过期文件；删除操作必须经过人工明确评审。完成后重新生成契约锁和 API 索引。
