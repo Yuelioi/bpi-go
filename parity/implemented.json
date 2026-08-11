@@ -1,0 +1,1448 @@
+{
+  "schema_version": 1,
+  "source_commit": "36cb1104befee33b4281c59a4365d42dfdde45a4",
+  "mappings": [
+    {
+      "contract": "activity.info",
+      "domain_accessor": "Client.Activity",
+      "method": "ActivityClient.Info",
+      "params": "activity.InfoParams",
+      "model": "activity.Info"
+    },
+    {
+      "contract": "activity.list",
+      "domain_accessor": "Client.Activity",
+      "method": "ActivityClient.List",
+      "params": "activity.ListParams",
+      "model": "activity.ListPage"
+    },
+    {
+      "contract": "video.view",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.View",
+      "params": "video.ViewParams",
+      "model": "video.View"
+    },
+    {
+      "contract": "video.detail",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.Detail",
+      "params": "video.DetailParams",
+      "model": "video.Detail"
+    },
+    {
+      "contract": "video.pagelist",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.PageList",
+      "params": "video.PageListParams",
+      "model": "[]video.Page"
+    },
+    {
+      "contract": "video.desc",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.Desc",
+      "params": "video.DescParams",
+      "model": "string"
+    },
+    {
+      "contract": "login.nav",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.Nav",
+      "params": "none",
+      "model": "login.Nav"
+    },
+    {
+      "contract": "video.play_url",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.PlayURL",
+      "params": "video.PlayURLParams",
+      "model": "video.PlayURL"
+    },
+    {
+      "contract": "comment.read.hot",
+      "domain_accessor": "Client.Comment",
+      "method": "CommentClient.Hot",
+      "params": "comment.HotParams",
+      "model": "*comment.Hot"
+    },
+    {
+      "contract": "bangumi.timeline",
+      "domain_accessor": "Client.Bangumi",
+      "method": "BangumiClient.Timeline",
+      "params": "bangumi.TimelineParams",
+      "model": "[]bangumi.TimelineDay"
+    },
+    {
+      "contract": "danmaku.web.seg",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.WebSegment",
+      "params": "danmaku.SegmentParams",
+      "model": "[]byte"
+    },
+    {
+      "contract": "clientinfo.ip",
+      "domain_accessor": "Client.ClientInfo",
+      "method": "ClientInfoClient.IP",
+      "params": "clientinfo.IPParams",
+      "model": "clientinfo.IPInfo"
+    },
+    {
+      "contract": "web_widget.region_banner",
+      "domain_accessor": "Client.WebWidget",
+      "method": "WebWidgetClient.RegionBanner",
+      "params": "webwidget.RegionBannerParams",
+      "model": "webwidget.RegionBannerData"
+    },
+    {
+      "contract": "web_widget.header_page",
+      "domain_accessor": "Client.WebWidget",
+      "method": "WebWidgetClient.HeaderPage",
+      "params": "webwidget.HeaderPageParams",
+      "model": "webwidget.HeaderData"
+    },
+    {
+      "contract": "web_widget.online",
+      "domain_accessor": "Client.WebWidget",
+      "method": "WebWidgetClient.Online",
+      "params": "none",
+      "model": "webwidget.OnlineData"
+    },
+    {
+      "contract": "opus.space_feed",
+      "domain_accessor": "Client.Opus",
+      "method": "OpusClient.SpaceFeed",
+      "params": "opus.SpaceFeedParams",
+      "model": "opus.SpaceFeed"
+    },
+    {
+      "contract": "video.online_total",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.OnlineTotal",
+      "params": "video.OnlineTotalParams",
+      "model": "video.OnlineTotal"
+    },
+    {
+      "contract": "video.related_videos",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.RelatedVideos",
+      "params": "video.RelatedParams",
+      "model": "[]video.RelatedVideo"
+    },
+    {
+      "contract": "video.tags",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.Tags",
+      "params": "video.TagsParams",
+      "model": "[]video.VideoTag"
+    },
+    {
+      "contract": "video.interactive_video_info",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.InteractiveVideoInfo",
+      "params": "video.InteractiveInfoParams",
+      "model": "video.InteractiveInfo"
+    },
+    {
+      "contract": "video.player_info_v2",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.PlayerInfoV2",
+      "params": "video.PlayerInfoParams",
+      "model": "video.PlayerInfo"
+    },
+    {
+      "contract": "video.homepage_recommendations",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.HomepageRecommendations",
+      "params": "video.HomepageRecommendationsParams",
+      "model": "video.HomepageRecommendations"
+    },
+    {
+      "contract": "video.ai_summary",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.AISummary",
+      "params": "video.AISummaryParams",
+      "model": "video.AISummary"
+    },
+    {
+      "contract": "video.collection.seasons_archives_list",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.SeasonsArchives",
+      "params": "video.SeasonsArchivesParams",
+      "model": "video.SeasonsArchives"
+    },
+    {
+      "contract": "video.collection.home_seasons_series",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.HomeSeasonsSeries",
+      "params": "video.HomeSeasonsSeriesParams",
+      "model": "video.SeasonsSeries"
+    },
+    {
+      "contract": "video.collection.seasons_series_list",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.SeasonsSeries",
+      "params": "video.SeasonsSeriesParams",
+      "model": "video.SeasonsSeries"
+    },
+    {
+      "contract": "video.collection.series_info",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.SeriesInfo",
+      "params": "video.SeriesInfoParams",
+      "model": "video.SeriesInfo"
+    },
+    {
+      "contract": "video.collection.series_archives",
+      "domain_accessor": "Client.Video",
+      "method": "VideoClient.SeriesArchives",
+      "params": "video.SeriesArchivesParams",
+      "model": "video.SeriesArchives"
+    },
+    {
+      "contract": "search.article",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.Article",
+      "params": "search.ArticleParams",
+      "model": "search.Data[[]search.Article]"
+    },
+    {
+      "contract": "search.bangumi",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.Bangumi",
+      "params": "search.BangumiParams",
+      "model": "search.Data[[]search.Bangumi]"
+    },
+    {
+      "contract": "search.bili_user",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.Users",
+      "params": "search.UserParams",
+      "model": "search.Data[[]search.User]"
+    },
+    {
+      "contract": "search.default",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.Default",
+      "params": "none",
+      "model": "search.Default"
+    },
+    {
+      "contract": "search.hotwords",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.HotWords",
+      "params": "none",
+      "model": "search.HotWords"
+    },
+    {
+      "contract": "search.live",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.Live",
+      "params": "search.LiveParams",
+      "model": "search.Data[search.LiveData]"
+    },
+    {
+      "contract": "search.live_room",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.LiveRooms",
+      "params": "search.LiveRoomParams",
+      "model": "search.Data[[]search.LiveRoom]"
+    },
+    {
+      "contract": "search.live_user",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.LiveUsers",
+      "params": "search.LiveUserParams",
+      "model": "search.Data[[]search.LiveUser]"
+    },
+    {
+      "contract": "search.movie",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.Movies",
+      "params": "search.MovieParams",
+      "model": "search.Data[[]search.Movie]"
+    },
+    {
+      "contract": "search.suggest",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.Suggest",
+      "params": "search.SuggestParams",
+      "model": "search.Suggest"
+    },
+    {
+      "contract": "search.video",
+      "domain_accessor": "Client.Search",
+      "method": "SearchClient.Videos",
+      "params": "search.VideoParams",
+      "model": "search.Data[[]search.Video]"
+    },
+    {
+      "contract": "video_ranking.popular_list",
+      "domain_accessor": "Client.VideoRanking",
+      "method": "VideoRankingClient.PopularList",
+      "params": "videoranking.PopularListParams",
+      "model": "videoranking.PopularList"
+    },
+    {
+      "contract": "video_ranking.popular_precious",
+      "domain_accessor": "Client.VideoRanking",
+      "method": "VideoRankingClient.Precious",
+      "params": "none",
+      "model": "videoranking.PreciousVideos"
+    },
+    {
+      "contract": "video_ranking.popular_series_list",
+      "domain_accessor": "Client.VideoRanking",
+      "method": "VideoRankingClient.PopularSeriesList",
+      "params": "none",
+      "model": "videoranking.PopularSeriesList"
+    },
+    {
+      "contract": "video_ranking.popular_series_one",
+      "domain_accessor": "Client.VideoRanking",
+      "method": "VideoRankingClient.PopularSeries",
+      "params": "videoranking.PopularSeriesParams",
+      "model": "videoranking.PopularSeries"
+    },
+    {
+      "contract": "video_ranking.ranking_list",
+      "domain_accessor": "Client.VideoRanking",
+      "method": "VideoRankingClient.RankingList",
+      "params": "videoranking.RankingListParams",
+      "model": "videoranking.RankingList"
+    },
+    {
+      "contract": "video_ranking.region_dynamic",
+      "domain_accessor": "Client.VideoRanking",
+      "method": "VideoRankingClient.RegionDynamic",
+      "params": "videoranking.RegionDynamicParams",
+      "model": "videoranking.RegionArchives"
+    },
+    {
+      "contract": "video_ranking.region_newlist",
+      "domain_accessor": "Client.VideoRanking",
+      "method": "VideoRankingClient.RegionNewList",
+      "params": "videoranking.RegionNewListParams",
+      "model": "videoranking.RegionArchives"
+    },
+    {
+      "contract": "video_ranking.region_newlist_rank",
+      "domain_accessor": "Client.VideoRanking",
+      "method": "VideoRankingClient.RegionNewListRank",
+      "params": "videoranking.RegionNewListRankParams",
+      "model": "videoranking.NewListRank"
+    },
+    {
+      "contract": "video_ranking.region_tag_dynamic",
+      "domain_accessor": "Client.VideoRanking",
+      "method": "VideoRankingClient.RegionTagDynamic",
+      "params": "videoranking.RegionTagDynamicParams",
+      "model": "videoranking.RegionArchives"
+    },
+    {
+      "contract": "user.album_count",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.AlbumCount",
+      "params": "user.AlbumCountParams",
+      "model": "user.AlbumCount"
+    },
+    {
+      "contract": "user.bangumi_follow_list",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.BangumiFollowList",
+      "params": "user.BangumiFollowListParams",
+      "model": "user.BangumiFollowList"
+    },
+    {
+      "contract": "user.card",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.Card",
+      "params": "user.CardParams",
+      "model": "user.CardProfile"
+    },
+    {
+      "contract": "user.cards",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.Cards",
+      "params": "user.CardsParams",
+      "model": "[]user.BatchCard"
+    },
+    {
+      "contract": "user.follow_tags",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.FollowTags",
+      "params": "none",
+      "model": "[]user.FollowTag"
+    },
+    {
+      "contract": "user.followers",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.Followers",
+      "params": "user.FollowersParams",
+      "model": "user.Followers"
+    },
+    {
+      "contract": "user.followings",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.Followings",
+      "params": "user.FollowingsParams",
+      "model": "user.Followings"
+    },
+    {
+      "contract": "user.infos",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.Infos",
+      "params": "user.InfosParams",
+      "model": "[]user.BatchInfo"
+    },
+    {
+      "contract": "user.medal_wall",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.MedalWall",
+      "params": "user.MedalWallParams",
+      "model": "user.MedalWall"
+    },
+    {
+      "contract": "user.name_to_uid",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.NameToUID",
+      "params": "user.NameToUIDParams",
+      "model": "user.NameToUID"
+    },
+    {
+      "contract": "user.nav_stat",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.NavStat",
+      "params": "user.NavStatParams",
+      "model": "user.NavStat"
+    },
+    {
+      "contract": "user.relation_stat",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.RelationStat",
+      "params": "user.RelationStatParams",
+      "model": "user.RelationStat"
+    },
+    {
+      "contract": "user.space_info",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.SpaceInfo",
+      "params": "user.SpaceParams",
+      "model": "user.SpaceProfile"
+    },
+    {
+      "contract": "user.space_notice",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.SpaceNotice",
+      "params": "user.SpaceNoticeParams",
+      "model": "user.SpaceNotice"
+    },
+    {
+      "contract": "user.up_stat",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.UpStat",
+      "params": "user.UpStatParams",
+      "model": "user.UpStat"
+    },
+    {
+      "contract": "user.uploaded_videos",
+      "domain_accessor": "Client.User",
+      "method": "UserClient.UploadedVideos",
+      "params": "user.UploadedVideosParams",
+      "model": "user.UploadedVideos"
+    },
+    {
+      "contract": "article.articles_info",
+      "domain_accessor": "Client.Article",
+      "method": "ArticleClient.Articles",
+      "params": "article.ArticlesInfoParams",
+      "model": "article.Articles"
+    },
+    {
+      "contract": "article.cards",
+      "domain_accessor": "Client.Article",
+      "method": "ArticleClient.Cards",
+      "params": "article.CardsParams",
+      "model": "article.CardData"
+    },
+    {
+      "contract": "article.info",
+      "domain_accessor": "Client.Article",
+      "method": "ArticleClient.Info",
+      "params": "article.InfoParams",
+      "model": "article.Info"
+    },
+    {
+      "contract": "article.view",
+      "domain_accessor": "Client.Article",
+      "method": "ArticleClient.View",
+      "params": "article.ViewParams",
+      "model": "article.View"
+    },
+    {
+      "contract": "audio.coin_count",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.CoinCount",
+      "params": "audio.SongParams",
+      "model": "int32"
+    },
+    {
+      "contract": "audio.collection_info",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.CollectionInfo",
+      "params": "audio.CollectionInfoParams",
+      "model": "*audio.Collection"
+    },
+    {
+      "contract": "audio.collection_status",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.CollectionStatus",
+      "params": "audio.SongParams",
+      "model": "bool"
+    },
+    {
+      "contract": "audio.collections_list",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.CollectionsList",
+      "params": "audio.PageParams",
+      "model": "audio.Page[audio.Collection]"
+    },
+    {
+      "contract": "audio.hot_menu",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.HotMenu",
+      "params": "audio.PageParams",
+      "model": "audio.Page[audio.HotMenu]"
+    },
+    {
+      "contract": "audio.info",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.Info",
+      "params": "audio.SongParams",
+      "model": "audio.Info"
+    },
+    {
+      "contract": "audio.lyric",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.Lyric",
+      "params": "audio.SongParams",
+      "model": "string"
+    },
+    {
+      "contract": "audio.members",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.Members",
+      "params": "audio.SongParams",
+      "model": "[]audio.MemberGroup"
+    },
+    {
+      "contract": "audio.rank_detail",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.RankDetail",
+      "params": "audio.RankListParams",
+      "model": "audio.RankDetail"
+    },
+    {
+      "contract": "audio.rank_menu",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.RankMenu",
+      "params": "audio.PageParams",
+      "model": "audio.Page[audio.RankMenu]"
+    },
+    {
+      "contract": "audio.rank_music_list",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.RankMusicList",
+      "params": "audio.RankListParams",
+      "model": "audio.RankMusicList"
+    },
+    {
+      "contract": "audio.rank_period",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.RankPeriod",
+      "params": "audio.RankPeriodParams",
+      "model": "audio.RankPeriods"
+    },
+    {
+      "contract": "audio.status_number",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.StatusNumber",
+      "params": "audio.SongParams",
+      "model": "audio.StatusNumber"
+    },
+    {
+      "contract": "audio.stream_url",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.StreamURL",
+      "params": "audio.StreamURLParams",
+      "model": "audio.StreamURL"
+    },
+    {
+      "contract": "audio.stream_url_web",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.StreamURLWeb",
+      "params": "audio.StreamURLWebParams",
+      "model": "audio.StreamURLWeb"
+    },
+    {
+      "contract": "audio.tags",
+      "domain_accessor": "Client.Audio",
+      "method": "AudioClient.Tags",
+      "params": "audio.SongParams",
+      "model": "[]audio.Tag"
+    },
+    {
+      "contract": "bangumi.info.review_user",
+      "domain_accessor": "Client.Bangumi",
+      "method": "BangumiClient.Review",
+      "params": "bangumi.InfoParams",
+      "model": "bangumi.Info"
+    },
+    {
+      "contract": "bangumi.info.season_detail_by_ep_id",
+      "domain_accessor": "Client.Bangumi",
+      "method": "BangumiClient.EpisodeDetail",
+      "params": "ids.EpisodeID",
+      "model": "bangumi.Detail"
+    },
+    {
+      "contract": "bangumi.info.season_detail_by_season_id",
+      "domain_accessor": "Client.Bangumi",
+      "method": "BangumiClient.SeasonDetail",
+      "params": "ids.SeasonID",
+      "model": "bangumi.Detail"
+    },
+    {
+      "contract": "bangumi.info.season_section",
+      "domain_accessor": "Client.Bangumi",
+      "method": "BangumiClient.Sections",
+      "params": "bangumi.SectionsParams",
+      "model": "bangumi.Sections"
+    },
+    {
+      "contract": "bangumi.playurl",
+      "domain_accessor": "Client.Bangumi",
+      "method": "BangumiClient.PlayURL",
+      "params": "bangumi.PlayURLParams",
+      "model": "bangumi.PlayURL"
+    },
+    {
+      "contract": "cheese.info.ep_list",
+      "domain_accessor": "Client.Cheese",
+      "method": "CheeseClient.EpisodeList",
+      "params": "cheese.EpisodeListParams",
+      "model": "cheese.EpisodeList"
+    },
+    {
+      "contract": "cheese.info.season_detail_by_ep_id",
+      "domain_accessor": "Client.Cheese",
+      "method": "CheeseClient.EpisodeDetail",
+      "params": "ids.EpisodeID",
+      "model": "cheese.Course"
+    },
+    {
+      "contract": "cheese.info.season_detail_by_season_id",
+      "domain_accessor": "Client.Cheese",
+      "method": "CheeseClient.SeasonDetail",
+      "params": "ids.SeasonID",
+      "model": "cheese.Course"
+    },
+    {
+      "contract": "cheese.playurl",
+      "domain_accessor": "Client.Cheese",
+      "method": "CheeseClient.PlayURL",
+      "params": "cheese.PlayURLParams",
+      "model": "cheese.PlayURL"
+    },
+    {
+      "contract": "manga.clock_in_info",
+      "domain_accessor": "Client.Manga",
+      "method": "MangaClient.ClockInInfo",
+      "params": "none",
+      "model": "manga.ClockInInfo"
+    },
+    {
+      "contract": "manga.coupons",
+      "domain_accessor": "Client.Manga",
+      "method": "MangaClient.Coupons",
+      "params": "manga.CouponsParams",
+      "model": "manga.Coupons"
+    },
+    {
+      "contract": "manga.point_products",
+      "domain_accessor": "Client.Manga",
+      "method": "MangaClient.PointProducts",
+      "params": "none",
+      "model": "[]manga.Product"
+    },
+    {
+      "contract": "manga.season_info",
+      "domain_accessor": "Client.Manga",
+      "method": "MangaClient.SeasonInfo",
+      "params": "none",
+      "model": "manga.SeasonInfo"
+    },
+    {
+      "contract": "manga.user_point",
+      "domain_accessor": "Client.Manga",
+      "method": "MangaClient.UserPoint",
+      "params": "none",
+      "model": "manga.UserPoint"
+    },
+    {
+      "contract": "comment.read.count",
+      "domain_accessor": "Client.Comment",
+      "method": "CommentClient.Count",
+      "params": "comment.CountParams",
+      "model": "comment.Count"
+    },
+    {
+      "contract": "comment.read.list",
+      "domain_accessor": "Client.Comment",
+      "method": "CommentClient.List",
+      "params": "comment.ListParams",
+      "model": "comment.List"
+    },
+    {
+      "contract": "comment.read.replies",
+      "domain_accessor": "Client.Comment",
+      "method": "CommentClient.Replies",
+      "params": "comment.RepliesParams",
+      "model": "comment.List"
+    },
+    {
+      "contract": "dynamic.detail",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.Detail",
+      "params": "dynamic.DetailParams",
+      "model": "dynamic.Detail"
+    },
+    {
+      "contract": "dynamic.detail_forward",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.Forwards",
+      "params": "dynamic.OffsetParams",
+      "model": "dynamic.Forwards"
+    },
+    {
+      "contract": "dynamic.detail_forward_item",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.ForwardItem",
+      "params": "dynamic.ItemParams",
+      "model": "dynamic.ForwardInfo"
+    },
+    {
+      "contract": "dynamic.detail_pic",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.Pictures",
+      "params": "dynamic.ItemParams",
+      "model": "[]dynamic.Picture"
+    },
+    {
+      "contract": "dynamic.detail_reaction",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.Reactions",
+      "params": "dynamic.OffsetParams",
+      "model": "dynamic.Reactions"
+    },
+    {
+      "contract": "dynamic.feed_all",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.All",
+      "params": "dynamic.AllParams",
+      "model": "dynamic.Feed"
+    },
+    {
+      "contract": "dynamic.feed_all_update",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.CheckNew",
+      "params": "dynamic.CheckNewParams",
+      "model": "dynamic.Update"
+    },
+    {
+      "contract": "dynamic.feed_banner",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.FeedBanner",
+      "params": "none",
+      "model": "dynamic.BannerFeed"
+    },
+    {
+      "contract": "dynamic.feed_nav",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.NavFeed",
+      "params": "dynamic.NavFeedParams",
+      "model": "dynamic.NavFeed"
+    },
+    {
+      "contract": "dynamic.live_users",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.LiveUsers",
+      "params": "dynamic.LiveUsersParams",
+      "model": "dynamic.LiveUsers"
+    },
+    {
+      "contract": "dynamic.lottery_notice",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.LotteryNotice",
+      "params": "dynamic.LotteryNoticeParams",
+      "model": "dynamic.LotteryNotice"
+    },
+    {
+      "contract": "dynamic.recent_up",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.RecentUp",
+      "params": "none",
+      "model": "dynamic.RecentUp"
+    },
+    {
+      "contract": "dynamic.up_users",
+      "domain_accessor": "Client.Dynamic",
+      "method": "DynamicClient.UpUsers",
+      "params": "dynamic.UpUsersParams",
+      "model": "dynamic.UpUsers"
+    },
+    {
+      "contract": "note.archive_list",
+      "domain_accessor": "Client.Note",
+      "method": "NoteClient.ArchiveList",
+      "params": "note.ArchiveListParams",
+      "model": "note.ArchiveList"
+    },
+    {
+      "contract": "note.is_forbid",
+      "domain_accessor": "Client.Note",
+      "method": "NoteClient.IsForbid",
+      "params": "note.IsForbidParams",
+      "model": "note.IsForbid"
+    },
+    {
+      "contract": "note.private_info",
+      "domain_accessor": "Client.Note",
+      "method": "NoteClient.PrivateInfo",
+      "params": "note.PrivateInfoParams",
+      "model": "note.PrivateInfo"
+    },
+    {
+      "contract": "note.public_archive_list",
+      "domain_accessor": "Client.Note",
+      "method": "NoteClient.PublicArchiveList",
+      "params": "note.PublicArchiveListParams",
+      "model": "note.PublicArchiveList"
+    },
+    {
+      "contract": "note.public_info",
+      "domain_accessor": "Client.Note",
+      "method": "NoteClient.PublicInfo",
+      "params": "note.PublicInfoParams",
+      "model": "note.PublicInfo"
+    },
+    {
+      "contract": "note.user_private_list",
+      "domain_accessor": "Client.Note",
+      "method": "NoteClient.UserPrivateList",
+      "params": "note.Pagination",
+      "model": "note.PrivateList"
+    },
+    {
+      "contract": "note.user_public_list",
+      "domain_accessor": "Client.Note",
+      "method": "NoteClient.UserPublicList",
+      "params": "note.Pagination",
+      "model": "note.PublicUserList"
+    },
+    {
+      "contract": "misc.b23tv.short_link",
+      "domain_accessor": "Client.Misc",
+      "method": "MiscClient.ShortLink",
+      "params": "misc.ShortLinkParams",
+      "model": "misc.ShortLink"
+    },
+    {
+      "contract": "misc.bili_ticket",
+      "domain_accessor": "Client.Misc",
+      "method": "MiscClient.BiliTicket",
+      "params": "none",
+      "model": "misc.Ticket"
+    },
+    {
+      "contract": "misc.buvid",
+      "domain_accessor": "Client.Misc",
+      "method": "MiscClient.Buvid",
+      "params": "none",
+      "model": "misc.Buvid"
+    },
+    {
+      "contract": "misc.buvid3",
+      "domain_accessor": "Client.Misc",
+      "method": "MiscClient.Buvid3",
+      "params": "none",
+      "model": "misc.Buvid3"
+    },
+    {
+      "contract": "vip.center_info",
+      "domain_accessor": "Client.VIP",
+      "method": "VIPClient.Center",
+      "params": "vip.CenterParams",
+      "model": "vip.Center"
+    },
+    {
+      "contract": "wallet.info",
+      "domain_accessor": "Client.Wallet",
+      "method": "WalletClient.Info",
+      "params": "wallet.InfoParams",
+      "model": "wallet.Info"
+    },
+    {
+      "contract": "historytoview.history_list",
+      "domain_accessor": "Client.HistoryToView",
+      "method": "HistoryToViewClient.HistoryList",
+      "params": "historytoview.ListParams",
+      "model": "historytoview.HistoryList"
+    },
+    {
+      "contract": "historytoview.history_shadow",
+      "domain_accessor": "Client.HistoryToView",
+      "method": "HistoryToViewClient.HistoryShadow",
+      "params": "none",
+      "model": "bool"
+    },
+    {
+      "contract": "historytoview.toview_list",
+      "domain_accessor": "Client.HistoryToView",
+      "method": "HistoryToViewClient.ToViewList",
+      "params": "none",
+      "model": "historytoview.ToViewList"
+    },
+    {
+      "contract": "message.reply_feed",
+      "domain_accessor": "Client.Message",
+      "method": "MessageClient.ReplyFeed",
+      "params": "message.ReplyFeedParams",
+      "model": "message.ReplyFeed"
+    },
+    {
+      "contract": "message.single_unread",
+      "domain_accessor": "Client.Message",
+      "method": "MessageClient.SingleUnread",
+      "params": "message.SingleUnreadParams",
+      "model": "message.SingleUnread"
+    },
+    {
+      "contract": "message.unread_count",
+      "domain_accessor": "Client.Message",
+      "method": "MessageClient.UnreadCount",
+      "params": "message.UnreadCountParams",
+      "model": "message.UnreadCount"
+    },
+    {
+      "contract": "fav.collected_list",
+      "domain_accessor": "Client.Fav",
+      "method": "FavClient.CollectedList",
+      "params": "fav.CollectedListParams",
+      "model": "fav.CollectedList"
+    },
+    {
+      "contract": "fav.created_list",
+      "domain_accessor": "Client.Fav",
+      "method": "FavClient.CreatedList",
+      "params": "fav.CreatedListParams",
+      "model": "fav.CreatedList"
+    },
+    {
+      "contract": "fav.folder_info",
+      "domain_accessor": "Client.Fav",
+      "method": "FavClient.FolderInfo",
+      "params": "fav.FolderInfoParams",
+      "model": "fav.FolderInfo"
+    },
+    {
+      "contract": "fav.list_detail",
+      "domain_accessor": "Client.Fav",
+      "method": "FavClient.ListDetail",
+      "params": "fav.ListDetailParams",
+      "model": "fav.ListDetail"
+    },
+    {
+      "contract": "fav.resource_ids",
+      "domain_accessor": "Client.Fav",
+      "method": "FavClient.ResourceIDs",
+      "params": "fav.ResourceIDsParams",
+      "model": "[]fav.ResourceID"
+    },
+    {
+      "contract": "fav.resource_infos",
+      "domain_accessor": "Client.Fav",
+      "method": "FavClient.ResourceInfos",
+      "params": "fav.ResourceInfosParams",
+      "model": "[]fav.ResourceInfo"
+    },
+    {
+      "contract": "electric.charge_follow_info",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.ChargeFollowInfo",
+      "params": "electric.UpMIDParams",
+      "model": "electric.FollowInfo"
+    },
+    {
+      "contract": "electric.charge_record",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.ChargeRecord",
+      "params": "electric.ChargeRecordParams",
+      "model": "electric.ChargeRecord"
+    },
+    {
+      "contract": "electric.month_up_list",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.MonthUpList",
+      "params": "electric.MonthUpListParams",
+      "model": "electric.MonthUpList"
+    },
+    {
+      "contract": "electric.rank_recent",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.RankRecent",
+      "params": "electric.PaginationParams",
+      "model": "electric.RecentRank"
+    },
+    {
+      "contract": "electric.recharge_list",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.RechargeList",
+      "params": "electric.RechargeListParams",
+      "model": "electric.RechargeList"
+    },
+    {
+      "contract": "electric.remark_detail",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.RemarkDetail",
+      "params": "electric.RemarkDetailParams",
+      "model": "electric.RemarkDetail"
+    },
+    {
+      "contract": "electric.remark_list",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.RemarkList",
+      "params": "electric.RemarkListParams",
+      "model": "electric.RemarkList"
+    },
+    {
+      "contract": "electric.upower_item_detail",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.ItemDetail",
+      "params": "electric.UpMIDParams",
+      "model": "electric.ItemDetail"
+    },
+    {
+      "contract": "electric.upower_member_rank",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.MemberRank",
+      "params": "electric.MemberRankParams",
+      "model": "electric.MemberRank"
+    },
+    {
+      "contract": "electric.video_show",
+      "domain_accessor": "Client.Electric",
+      "method": "ElectricClient.VideoShow",
+      "params": "electric.VideoShowParams",
+      "model": "electric.VideoShow"
+    },
+    {
+      "contract": "danmaku.adv.state",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.AdvState",
+      "params": "danmaku.AdvStateParams",
+      "model": "danmaku.AdvState"
+    },
+    {
+      "contract": "danmaku.history.dates",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.HistoryDates",
+      "params": "danmaku.HistoryDatesParams",
+      "model": "[]string"
+    },
+    {
+      "contract": "danmaku.history.xml",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.HistoryXMLBytes",
+      "params": "danmaku.HistoryBytesParams",
+      "model": "[]byte"
+    },
+    {
+      "contract": "danmaku.mobile.seg",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.MobileSegment",
+      "params": "danmaku.SegmentParams",
+      "model": "[]byte"
+    },
+    {
+      "contract": "danmaku.snapshot",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.Snapshot",
+      "params": "danmaku.SnapshotParams",
+      "model": "[]string"
+    },
+    {
+      "contract": "danmaku.thumbup.stats",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.ThumbupStats",
+      "params": "danmaku.ThumbupStatsParams",
+      "model": "danmaku.ThumbupStats"
+    },
+    {
+      "contract": "danmaku.web.history_seg",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.WebHistorySegment",
+      "params": "danmaku.HistoryBytesParams",
+      "model": "[]byte"
+    },
+    {
+      "contract": "danmaku.web.seg_wbi",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.WebSegmentWBI",
+      "params": "danmaku.SegmentParams",
+      "model": "[]byte"
+    },
+    {
+      "contract": "danmaku.web.view",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.WebView",
+      "params": "danmaku.WebViewParams",
+      "model": "[]byte"
+    },
+    {
+      "contract": "danmaku.xml.comment_xml",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.XMLList",
+      "params": "danmaku.XMLListParams",
+      "model": "danmaku.XML"
+    },
+    {
+      "contract": "danmaku.xml.list_so",
+      "domain_accessor": "Client.Danmaku",
+      "method": "DanmakuClient.XMLListSO",
+      "params": "danmaku.XMLListParams",
+      "model": "danmaku.XML"
+    },
+    {
+      "contract": "login.account_info",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.AccountInfo",
+      "params": "none",
+      "model": "login.AccountInfo"
+    },
+    {
+      "contract": "login.captcha_generate",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.GenerateCaptcha",
+      "params": "none",
+      "model": "login.Captcha"
+    },
+    {
+      "contract": "login.coin",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.Coin",
+      "params": "none",
+      "model": "login.CoinBalance"
+    },
+    {
+      "contract": "login.daily_reward",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.DailyReward",
+      "params": "none",
+      "model": "login.DailyReward"
+    },
+    {
+      "contract": "login.log",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.Log",
+      "params": "login.LogParams",
+      "model": "login.Log"
+    },
+    {
+      "contract": "login.notice",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.Notice",
+      "params": "login.NoticeParams",
+      "model": "login.Notice"
+    },
+    {
+      "contract": "login.qr.flow",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.QRFlow",
+      "params": "none",
+      "model": "login.QRFlow"
+    },
+    {
+      "contract": "login.qr_generate",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.GenerateQR",
+      "params": "none",
+      "model": "login.QRGenerate"
+    },
+    {
+      "contract": "login.qr_poll",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.PollQR",
+      "params": "login.QRPollParams",
+      "model": "login.QRStatus"
+    },
+    {
+      "contract": "login.stat",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.Stat",
+      "params": "none",
+      "model": "login.Stats"
+    },
+    {
+      "contract": "login.today_coin_exp",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.TodayCoinExp",
+      "params": "none",
+      "model": "login.TodayCoinExp"
+    },
+    {
+      "contract": "login.vip_info",
+      "domain_accessor": "Client.Login",
+      "method": "LoginClient.VIPInfo",
+      "params": "none",
+      "model": "login.VIPInfo"
+    },
+    {
+      "contract": "creativecenter.railgun.electromagnetic_info",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.ElectromagneticInfo",
+      "params": "none",
+      "model": "creativecenter.ElectromagneticInfo"
+    },
+    {
+      "contract": "creativecenter.season.aid",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.SeasonByAID",
+      "params": "creativecenter.SeasonByAIDParams",
+      "model": "creativecenter.Season"
+    },
+    {
+      "contract": "creativecenter.season.info",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.SeasonInfo",
+      "params": "creativecenter.SeasonInfoParams",
+      "model": "creativecenter.SeasonInfo"
+    },
+    {
+      "contract": "creativecenter.season.list",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.SeasonList",
+      "params": "creativecenter.SeasonListParams",
+      "model": "creativecenter.SeasonList"
+    },
+    {
+      "contract": "creativecenter.season.section",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.SeasonSection",
+      "params": "creativecenter.SectionParams",
+      "model": "creativecenter.SectionEpisodes"
+    },
+    {
+      "contract": "creativecenter.statistics.archive_compare",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.ArchiveCompare",
+      "params": "creativecenter.ArchiveCompareParams",
+      "model": "creativecenter.ArchiveCompare"
+    },
+    {
+      "contract": "creativecenter.statistics.article_stat",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.ArticleStat",
+      "params": "none",
+      "model": "creativecenter.ArticleStat"
+    },
+    {
+      "contract": "creativecenter.statistics.article_trend",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.ArticleTrend",
+      "params": "creativecenter.ArticleTrendParams",
+      "model": "[]creativecenter.Trend"
+    },
+    {
+      "contract": "creativecenter.statistics.play_source",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.PlaySource",
+      "params": "none",
+      "model": "*creativecenter.PlaySource"
+    },
+    {
+      "contract": "creativecenter.statistics.up_stat",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.UpStat",
+      "params": "none",
+      "model": "creativecenter.UpStat"
+    },
+    {
+      "contract": "creativecenter.statistics.video_trend",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.VideoTrend",
+      "params": "creativecenter.VideoTrendParams",
+      "model": "[]creativecenter.Trend"
+    },
+    {
+      "contract": "creativecenter.statistics.viewer_data",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.ViewerData",
+      "params": "none",
+      "model": "creativecenter.ViewerData"
+    },
+    {
+      "contract": "creativecenter.videos.archive_videos",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.ArchiveVideos",
+      "params": "creativecenter.ArchiveVideosParams",
+      "model": "creativecenter.ArchiveVideos"
+    },
+    {
+      "contract": "creativecenter.videos.archives_list",
+      "domain_accessor": "Client.CreativeCenter",
+      "method": "CreativeCenterClient.ArchivesList",
+      "params": "creativecenter.ArchivesListParams",
+      "model": "creativecenter.ArchivesList"
+    },
+    {
+      "contract": "live.area_list",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.AreaList",
+      "params": "none",
+      "model": "[]live.ParentArea"
+    },
+    {
+      "contract": "live.banned_users",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.BannedUsers",
+      "params": "live.BannedUsersParams",
+      "model": "live.BannedUsers"
+    },
+    {
+      "contract": "live.blind_gift_info",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.BlindGiftInfo",
+      "params": "live.BlindGiftInfoParams",
+      "model": "live.BlindGiftInfo"
+    },
+    {
+      "contract": "live.danmu_info",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.DanmuInfo",
+      "params": "live.DanmuInfoParams",
+      "model": "live.DanmuInfo"
+    },
+    {
+      "contract": "live.emoticons",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.Emoticons",
+      "params": "live.EmoticonsParams",
+      "model": "live.EmoticonData"
+    },
+    {
+      "contract": "live.follow_up_list",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.FollowUpList",
+      "params": "live.FollowUpListParams",
+      "model": "live.FollowUpList"
+    },
+    {
+      "contract": "live.follow_up_web_list",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.FollowUpWebList",
+      "params": "live.FollowUpWebListParams",
+      "model": "live.FollowUpWebList"
+    },
+    {
+      "contract": "live.gift_types",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.GiftTypes",
+      "params": "none",
+      "model": "[]live.GiftType"
+    },
+    {
+      "contract": "live.guard_list",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.GuardList",
+      "params": "live.GuardListParams",
+      "model": "live.GuardList"
+    },
+    {
+      "contract": "live.lottery_info",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.LotteryInfo",
+      "params": "live.LotteryInfoParams",
+      "model": "live.LotteryInfo"
+    },
+    {
+      "contract": "live.my_medals",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.MyMedals",
+      "params": "live.MyMedalsParams",
+      "model": "live.MyMedals"
+    },
+    {
+      "contract": "live.recommend",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.Recommend",
+      "params": "none",
+      "model": "live.Recommend"
+    },
+    {
+      "contract": "live.replay_list",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.ReplayList",
+      "params": "live.ReplayListParams",
+      "model": "live.ReplayList"
+    },
+    {
+      "contract": "live.room_gift_list",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.RoomGiftList",
+      "params": "live.RoomGiftListParams",
+      "model": "live.RoomGiftList"
+    },
+    {
+      "contract": "live.room_info",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.RoomInfo",
+      "params": "live.RoomInfoParams",
+      "model": "live.RoomInfo"
+    },
+    {
+      "contract": "live.shield_keywords",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.ShieldKeywords",
+      "params": "live.ShieldKeywordsParams",
+      "model": "live.ShieldKeywords"
+    },
+    {
+      "contract": "live.silent_users",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.SilentUsers",
+      "params": "live.SilentUsersParams",
+      "model": "live.SilentUsers"
+    },
+    {
+      "contract": "live.stream",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.Stream",
+      "params": "live.StreamParams",
+      "model": "live.Stream"
+    },
+    {
+      "contract": "live.version",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.Version",
+      "params": "none",
+      "model": "live.Version"
+    },
+    {
+      "contract": "live.web_heart_beat",
+      "domain_accessor": "Client.Live",
+      "method": "LiveClient.WebHeartBeat",
+      "params": "live.WebHeartBeatParams",
+      "model": "live.HeartBeat"
+    }
+  ]
+}

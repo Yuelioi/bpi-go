@@ -1,0 +1,23 @@
+# Local credentials and environment
+/account.toml
+/.env
+/.env.*
+!/.env.example
+
+# Go build and test output
+/bin/
+/coverage/
+/dist/
+/tmp/
+*.exe
+*.test
+*.out
+
+# Live probe output must never be committed
+/probe-output/
+
+# Editor and operating-system state
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db

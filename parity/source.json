@@ -1,0 +1,2066 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/Yuelioi/bpi-rs",
+    "commit": "36cb1104befee33b4281c59a4365d42dfdde45a4",
+    "cargo_version": "0.2.4"
+  },
+  "summary": {
+    "domain_clients": 27,
+    "promoted_contracts": 206,
+    "risk_counts": {
+      "authenticated-read": 32,
+      "login-session": 7,
+      "private-read": 52,
+      "public-read": 115
+    }
+  },
+  "domains": [
+    {
+      "name": "activity",
+      "source_methods": [
+        "info",
+        "list",
+        "list_default"
+      ],
+      "contracts": [
+        {
+          "name": "activity.info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/activity/subject/info",
+          "source_path": "tests/contracts/activity/info/contract.json"
+        },
+        {
+          "name": "activity.list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/activity/page/list",
+          "source_path": "tests/contracts/activity/list/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "article",
+      "source_methods": [
+        "articles",
+        "cards",
+        "info",
+        "view"
+      ],
+      "contracts": [
+        {
+          "name": "article.articles_info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/article/list/web/articles",
+          "source_path": "tests/contracts/article/articles/contract.json"
+        },
+        {
+          "name": "article.cards",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/article/cards",
+          "source_path": "tests/contracts/article/cards/contract.json"
+        },
+        {
+          "name": "article.info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/article/viewinfo",
+          "source_path": "tests/contracts/article/info/contract.json"
+        },
+        {
+          "name": "article.view",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/article/view",
+          "source_path": "tests/contracts/article/view/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "audio",
+      "source_methods": [
+        "coin_count",
+        "collection_info",
+        "collection_status",
+        "collections_list",
+        "hot_menu",
+        "info",
+        "lyric",
+        "members",
+        "rank_detail",
+        "rank_menu",
+        "rank_music_list",
+        "rank_period",
+        "status_number",
+        "stream_url",
+        "stream_url_web",
+        "tags"
+      ],
+      "contracts": [
+        {
+          "name": "audio.coin_count",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/coin/audio",
+          "source_path": "tests/contracts/audio/coin-count/contract.json"
+        },
+        {
+          "name": "audio.collection_info",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/collections/info",
+          "source_path": "tests/contracts/audio/collection-info/contract.json"
+        },
+        {
+          "name": "audio.collection_status",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/collections/songs-coll",
+          "source_path": "tests/contracts/audio/collection-status/contract.json"
+        },
+        {
+          "name": "audio.collections_list",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/collections/list",
+          "source_path": "tests/contracts/audio/collections-list/contract.json"
+        },
+        {
+          "name": "audio.hot_menu",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/menu/hit",
+          "source_path": "tests/contracts/audio/hot-menu/contract.json"
+        },
+        {
+          "name": "audio.info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/song/info",
+          "source_path": "tests/contracts/audio/info/contract.json"
+        },
+        {
+          "name": "audio.lyric",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/song/lyric",
+          "source_path": "tests/contracts/audio/lyric/contract.json"
+        },
+        {
+          "name": "audio.members",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/member/song",
+          "source_path": "tests/contracts/audio/members/contract.json"
+        },
+        {
+          "name": "audio.rank_detail",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/copyright-music-publicity/toplist/detail",
+          "source_path": "tests/contracts/audio/rank-detail/contract.json"
+        },
+        {
+          "name": "audio.rank_menu",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/menu/rank",
+          "source_path": "tests/contracts/audio/rank-menu/contract.json"
+        },
+        {
+          "name": "audio.rank_music_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/copyright-music-publicity/toplist/music_list",
+          "source_path": "tests/contracts/audio/rank-music-list/contract.json"
+        },
+        {
+          "name": "audio.rank_period",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/copyright-music-publicity/toplist/all_period",
+          "source_path": "tests/contracts/audio/rank-period/contract.json"
+        },
+        {
+          "name": "audio.status_number",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/stat/song",
+          "source_path": "tests/contracts/audio/status-number/contract.json"
+        },
+        {
+          "name": "audio.stream_url",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/audio/music-service-c/url",
+          "source_path": "tests/contracts/audio/stream-url/contract.json"
+        },
+        {
+          "name": "audio.stream_url_web",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/url",
+          "source_path": "tests/contracts/audio/stream-url-web/contract.json"
+        },
+        {
+          "name": "audio.tags",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://www.bilibili.com/audio/music-service-c/web/tag/song",
+          "source_path": "tests/contracts/audio/tags/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "bangumi",
+      "source_methods": [
+        "detail",
+        "detail_by_ep_id",
+        "detail_by_season_id",
+        "info",
+        "sections",
+        "timeline",
+        "video_stream"
+      ],
+      "contracts": [
+        {
+          "name": "bangumi.info.review_user",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pgc/review/user",
+          "source_path": "tests/contracts/bangumi/info/review-user/contract.json"
+        },
+        {
+          "name": "bangumi.info.season_detail_by_ep_id",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pgc/view/web/season",
+          "source_path": "tests/contracts/bangumi/info/season-detail-episode/contract.json"
+        },
+        {
+          "name": "bangumi.info.season_detail_by_season_id",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pgc/view/web/season",
+          "source_path": "tests/contracts/bangumi/info/season-detail-season/contract.json"
+        },
+        {
+          "name": "bangumi.info.season_section",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pgc/web/season/section",
+          "source_path": "tests/contracts/bangumi/info/season-section/contract.json"
+        },
+        {
+          "name": "bangumi.playurl",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pgc/player/web/playurl",
+          "source_path": "tests/contracts/bangumi/playurl/contract.json"
+        },
+        {
+          "name": "bangumi.timeline",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pgc/web/timeline",
+          "source_path": "tests/contracts/bangumi/timeline/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "cheese",
+      "source_methods": [
+        "ep_list",
+        "info",
+        "info_by_ep_id",
+        "info_by_season_id",
+        "video_stream"
+      ],
+      "contracts": [
+        {
+          "name": "cheese.info.ep_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pugv/view/web/ep/list",
+          "source_path": "tests/contracts/cheese/info/ep-list/contract.json"
+        },
+        {
+          "name": "cheese.info.season_detail_by_ep_id",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pugv/view/web/season",
+          "source_path": "tests/contracts/cheese/info/season-detail-episode/contract.json"
+        },
+        {
+          "name": "cheese.info.season_detail_by_season_id",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pugv/view/web/season",
+          "source_path": "tests/contracts/cheese/info/season-detail-season/contract.json"
+        },
+        {
+          "name": "cheese.playurl",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/pugv/player/web/playurl",
+          "source_path": "tests/contracts/cheese/playurl/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "clientinfo",
+      "source_methods": [
+        "ip"
+      ],
+      "contracts": [
+        {
+          "name": "clientinfo.ip",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr",
+          "source_path": "tests/contracts/clientinfo/ip/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "comment",
+      "source_methods": [
+        "count",
+        "hot",
+        "list",
+        "replies"
+      ],
+      "contracts": [
+        {
+          "name": "comment.read.count",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/reply/count",
+          "source_path": "tests/contracts/comment/read/count/contract.json"
+        },
+        {
+          "name": "comment.read.hot",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/reply/hot",
+          "source_path": "tests/contracts/comment/read/hot/contract.json"
+        },
+        {
+          "name": "comment.read.list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/reply",
+          "source_path": "tests/contracts/comment/read/list/contract.json"
+        },
+        {
+          "name": "comment.read.replies",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/reply/reply",
+          "source_path": "tests/contracts/comment/read/replies/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "creativecenter",
+      "source_methods": [
+        "archive_compare",
+        "archive_videos",
+        "archives_list",
+        "article_stat",
+        "article_trend",
+        "electromagnetic_info",
+        "play_source",
+        "season_by_aid",
+        "season_info",
+        "season_list",
+        "season_section_episodes",
+        "up_stat",
+        "video_trend",
+        "viewer_data"
+      ],
+      "contracts": [
+        {
+          "name": "creativecenter.railgun.electromagnetic_info",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/studio/up-rating/v3/rating/info",
+          "source_path": "tests/contracts/creativecenter/railgun-read/electromagnetic-info/contract.json"
+        },
+        {
+          "name": "creativecenter.season.aid",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x2/creative/web/season/aid",
+          "source_path": "tests/contracts/creativecenter/season/aid/contract.json"
+        },
+        {
+          "name": "creativecenter.season.info",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x2/creative/web/season",
+          "source_path": "tests/contracts/creativecenter/season/info/contract.json"
+        },
+        {
+          "name": "creativecenter.season.list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x2/creative/web/seasons",
+          "source_path": "tests/contracts/creativecenter/season/list/contract.json"
+        },
+        {
+          "name": "creativecenter.season.section",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x2/creative/web/season/section",
+          "source_path": "tests/contracts/creativecenter/season/section/contract.json"
+        },
+        {
+          "name": "creativecenter.statistics.archive_compare",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/data/archive_diagnose/compare",
+          "source_path": "tests/contracts/creativecenter/statistics/archive-compare/contract.json"
+        },
+        {
+          "name": "creativecenter.statistics.article_stat",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/data/article",
+          "source_path": "tests/contracts/creativecenter/statistics/article-stat/contract.json"
+        },
+        {
+          "name": "creativecenter.statistics.article_trend",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/data/article/thirty",
+          "source_path": "tests/contracts/creativecenter/statistics/article-trend/contract.json"
+        },
+        {
+          "name": "creativecenter.statistics.play_source",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/data/playsource",
+          "source_path": "tests/contracts/creativecenter/statistics/play-source/contract.json"
+        },
+        {
+          "name": "creativecenter.statistics.up_stat",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/index/stat",
+          "source_path": "tests/contracts/creativecenter/statistics/up-stat/contract.json"
+        },
+        {
+          "name": "creativecenter.statistics.video_trend",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/data/pandect",
+          "source_path": "tests/contracts/creativecenter/statistics/video-trend/contract.json"
+        },
+        {
+          "name": "creativecenter.statistics.viewer_data",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/data/base",
+          "source_path": "tests/contracts/creativecenter/statistics/viewer-data/contract.json"
+        },
+        {
+          "name": "creativecenter.videos.archive_videos",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/archive/videos",
+          "source_path": "tests/contracts/creativecenter/videos/archive-videos/contract.json"
+        },
+        {
+          "name": "creativecenter.videos.archives_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x2/creative/web/archives/sp",
+          "source_path": "tests/contracts/creativecenter/videos/archives-list/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "danmaku",
+      "source_methods": [
+        "adv_state",
+        "history_dates",
+        "history_xml_bytes",
+        "mobile_seg_proto",
+        "snapshot",
+        "thumbup_stats",
+        "web_history_seg_proto",
+        "web_seg_proto",
+        "web_seg_wbi_proto",
+        "web_view_proto",
+        "xml_list",
+        "xml_list_so"
+      ],
+      "contracts": [
+        {
+          "name": "danmaku.adv.state",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/dm/adv/state",
+          "source_path": "tests/contracts/danmaku/json-read/adv-state/contract.json"
+        },
+        {
+          "name": "danmaku.history.dates",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/history/index",
+          "source_path": "tests/contracts/danmaku/json-read/history-dates/contract.json"
+        },
+        {
+          "name": "danmaku.history.xml",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/history",
+          "source_path": "tests/contracts/danmaku/history-xml/contract.json"
+        },
+        {
+          "name": "danmaku.mobile.seg",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/list/seg.so",
+          "source_path": "tests/contracts/danmaku/non-json-read/mobile-seg/contract.json"
+        },
+        {
+          "name": "danmaku.snapshot",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/ajax",
+          "source_path": "tests/contracts/danmaku/json-read/snapshot/contract.json"
+        },
+        {
+          "name": "danmaku.thumbup.stats",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/thumbup/stats",
+          "source_path": "tests/contracts/danmaku/json-read/thumbup-stats/contract.json"
+        },
+        {
+          "name": "danmaku.web.history_seg",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/web/history/seg.so",
+          "source_path": "tests/contracts/danmaku/non-json-read/web-history-seg/contract.json"
+        },
+        {
+          "name": "danmaku.web.seg",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/web/seg.so",
+          "source_path": "tests/contracts/danmaku/non-json-read/web-seg/contract.json"
+        },
+        {
+          "name": "danmaku.web.seg_wbi",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/wbi/web/seg.so",
+          "source_path": "tests/contracts/danmaku/non-json-read/web-seg-wbi/contract.json"
+        },
+        {
+          "name": "danmaku.web.view",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/web/view",
+          "source_path": "tests/contracts/danmaku/non-json-read/web-view/contract.json"
+        },
+        {
+          "name": "danmaku.xml.comment_xml",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://comment.bilibili.com/16546.xml",
+          "source_path": "tests/contracts/danmaku/xml-read/comment-xml/contract.json"
+        },
+        {
+          "name": "danmaku.xml.list_so",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v1/dm/list.so",
+          "source_path": "tests/contracts/danmaku/xml-read/list-so/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "dynamic",
+      "source_methods": [
+        "all",
+        "check_new",
+        "detail",
+        "feed_banner",
+        "forward_item",
+        "forwards",
+        "live_users",
+        "lottery_notice",
+        "nav_feed",
+        "pics",
+        "reactions",
+        "recent_up",
+        "up_users"
+      ],
+      "contracts": [
+        {
+          "name": "dynamic.detail",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/detail",
+          "source_path": "tests/contracts/dynamic/detail/detail/contract.json"
+        },
+        {
+          "name": "dynamic.detail_forward",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/detail/forward",
+          "source_path": "tests/contracts/dynamic/detail/forwards/contract.json"
+        },
+        {
+          "name": "dynamic.detail_forward_item",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/detail/forward/item",
+          "source_path": "tests/contracts/dynamic/detail/forward-item/contract.json"
+        },
+        {
+          "name": "dynamic.detail_pic",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/detail/pic",
+          "source_path": "tests/contracts/dynamic/detail/pics/contract.json"
+        },
+        {
+          "name": "dynamic.detail_reaction",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/detail/reaction",
+          "source_path": "tests/contracts/dynamic/detail/reactions/contract.json"
+        },
+        {
+          "name": "dynamic.feed_all",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/all",
+          "source_path": "tests/contracts/dynamic/feed/all/contract.json"
+        },
+        {
+          "name": "dynamic.feed_all_update",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/all/update",
+          "source_path": "tests/contracts/dynamic/feed/check-new/contract.json"
+        },
+        {
+          "name": "dynamic.feed_banner",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/dynamic/feed/dyn/banner",
+          "source_path": "tests/contracts/dynamic/feed/banner/contract.json"
+        },
+        {
+          "name": "dynamic.feed_nav",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/nav",
+          "source_path": "tests/contracts/dynamic/feed/nav/contract.json"
+        },
+        {
+          "name": "dynamic.live_users",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.vc.bilibili.com/dynamic_svr/v1/dynamic_svr/w_live_users",
+          "source_path": "tests/contracts/dynamic/content/live-users/contract.json"
+        },
+        {
+          "name": "dynamic.lottery_notice",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.vc.bilibili.com/lottery_svr/v1/lottery_svr/lottery_notice",
+          "source_path": "tests/contracts/dynamic/lottery-notice-read/lottery-notice/contract.json"
+        },
+        {
+          "name": "dynamic.recent_up",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/portal",
+          "source_path": "tests/contracts/dynamic/content/recent-up/contract.json"
+        },
+        {
+          "name": "dynamic.up_users",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.vc.bilibili.com/dynamic_svr/v1/dynamic_svr/w_dyn_uplist",
+          "source_path": "tests/contracts/dynamic/content/up-users/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "electric",
+      "source_methods": [
+        "charge_follow_info",
+        "charge_record",
+        "month_up_list",
+        "rank_recent",
+        "recharge_list",
+        "remark_detail",
+        "remark_list",
+        "upower_item_detail",
+        "upower_member_rank",
+        "video_show"
+      ],
+      "contracts": [
+        {
+          "name": "electric.charge_follow_info",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/upower/charge/follow/info",
+          "source_path": "tests/contracts/electric/private-read/charge-follow-info/contract.json"
+        },
+        {
+          "name": "electric.charge_record",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/revenue/v1/guard/getChargeRecord",
+          "source_path": "tests/contracts/electric/private-read/charge-record/contract.json"
+        },
+        {
+          "name": "electric.month_up_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/ugcpay-rank/elec/month/up",
+          "source_path": "tests/contracts/electric/public-read/month-up-list/contract.json"
+        },
+        {
+          "name": "electric.rank_recent",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/h5/elec/rank/recent",
+          "source_path": "tests/contracts/electric/private-read/rank-recent/contract.json"
+        },
+        {
+          "name": "electric.recharge_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://pay.bilibili.com/bk/brokerage/listForCustomerRechargeRecord",
+          "source_path": "tests/contracts/electric/private-read/recharge-list/contract.json"
+        },
+        {
+          "name": "electric.remark_detail",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/elec/remark/detail",
+          "source_path": "tests/contracts/electric/private-read/remark-detail/contract.json"
+        },
+        {
+          "name": "electric.remark_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://member.bilibili.com/x/web/elec/remark/list",
+          "source_path": "tests/contracts/electric/private-read/remark-list/contract.json"
+        },
+        {
+          "name": "electric.upower_item_detail",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/upower/item/detail",
+          "source_path": "tests/contracts/electric/public-read/upower-item-detail/contract.json"
+        },
+        {
+          "name": "electric.upower_member_rank",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/upower/up/member/rank/v2",
+          "source_path": "tests/contracts/electric/public-read/upower-member-rank/contract.json"
+        },
+        {
+          "name": "electric.video_show",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/elec/show",
+          "source_path": "tests/contracts/electric/public-read/video-show/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "fav",
+      "source_methods": [
+        "collected_list",
+        "created_list",
+        "folder_info",
+        "list_detail",
+        "resource_ids",
+        "resource_infos"
+      ],
+      "contracts": [
+        {
+          "name": "fav.collected_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v3/fav/folder/collected/list",
+          "source_path": "tests/contracts/fav/read/collected-list/contract.json"
+        },
+        {
+          "name": "fav.created_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v3/fav/folder/created/list-all",
+          "source_path": "tests/contracts/fav/read/created-list/contract.json"
+        },
+        {
+          "name": "fav.folder_info",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v3/fav/folder/info",
+          "source_path": "tests/contracts/fav/read/folder-info/contract.json"
+        },
+        {
+          "name": "fav.list_detail",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v3/fav/resource/list",
+          "source_path": "tests/contracts/fav/read/list-detail/contract.json"
+        },
+        {
+          "name": "fav.resource_ids",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v3/fav/resource/ids",
+          "source_path": "tests/contracts/fav/read/resource-ids/contract.json"
+        },
+        {
+          "name": "fav.resource_infos",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v3/fav/resource/infos",
+          "source_path": "tests/contracts/fav/read/resource-infos/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "historytoview",
+      "source_methods": [
+        "history_list",
+        "history_shadow",
+        "toview_list"
+      ],
+      "contracts": [
+        {
+          "name": "historytoview.history_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/history/cursor",
+          "source_path": "tests/contracts/historytoview/read/history-list/contract.json"
+        },
+        {
+          "name": "historytoview.history_shadow",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/history/shadow",
+          "source_path": "tests/contracts/historytoview/read/history-shadow/contract.json"
+        },
+        {
+          "name": "historytoview.toview_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/history/toview",
+          "source_path": "tests/contracts/historytoview/read/toview-list/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "live",
+      "source_methods": [
+        "area_list",
+        "banned_users",
+        "blind_gift_info",
+        "danmu_info",
+        "emoticons",
+        "follow_up_list",
+        "follow_up_web_list",
+        "gift_types",
+        "guard_list",
+        "lottery_info",
+        "my_medals",
+        "recommend",
+        "replay_list",
+        "room_gift_list",
+        "room_info",
+        "shield_keywords",
+        "silent_users",
+        "stream",
+        "version",
+        "web_heart_beat"
+      ],
+      "contracts": [
+        {
+          "name": "live.area_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/room/v1/Area/getList",
+          "source_path": "tests/contracts/live/public-core/area-list/contract.json"
+        },
+        {
+          "name": "live.banned_users",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/app-ucenter/v2/xbanned/banned/GetBlackList",
+          "source_path": "tests/contracts/live/moderation-private-read/banned-users/contract.json"
+        },
+        {
+          "name": "live.blind_gift_info",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/general-interface/v1/blindFirstWin/getInfo",
+          "source_path": "tests/contracts/live/gift-read/blind-gift-info/contract.json"
+        },
+        {
+          "name": "live.danmu_info",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getDanmuInfo",
+          "source_path": "tests/contracts/live/room-interaction-read/danmu-info/contract.json"
+        },
+        {
+          "name": "live.emoticons",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-ucenter/v2/emoticon/GetEmoticons",
+          "source_path": "tests/contracts/live/room-interaction-read/emoticons/contract.json"
+        },
+        {
+          "name": "live.follow_up_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-ucenter/user/following",
+          "source_path": "tests/contracts/live/account-private-read/follow-up-list/contract.json"
+        },
+        {
+          "name": "live.follow_up_web_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-ucenter/v1/xfetter/GetWebList",
+          "source_path": "tests/contracts/live/account-private-read/follow-up-web-list/contract.json"
+        },
+        {
+          "name": "live.gift_types",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/gift/v1/master/getGiftTypes",
+          "source_path": "tests/contracts/live/gift-read/gift-types/contract.json"
+        },
+        {
+          "name": "live.guard_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/app-room/v2/guardTab/topListNew",
+          "source_path": "tests/contracts/live/guard-read/guard-list/contract.json"
+        },
+        {
+          "name": "live.lottery_info",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/lottery-interface/v1/lottery/getLotteryInfoWeb",
+          "source_path": "tests/contracts/live/room-interaction-read/lottery-info/contract.json"
+        },
+        {
+          "name": "live.my_medals",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/app-ucenter/v1/user/GetMyMedals",
+          "source_path": "tests/contracts/live/account-private-read/my-medals/contract.json"
+        },
+        {
+          "name": "live.recommend",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList",
+          "source_path": "tests/contracts/live/public-core/recommend/contract.json"
+        },
+        {
+          "name": "live.replay_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/app-blink/v1/anchorVideo/AnchorGetReplayList",
+          "source_path": "tests/contracts/live/account-private-read/replay-list/contract.json"
+        },
+        {
+          "name": "live.room_gift_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-room/v1/giftPanel/roomGiftList",
+          "source_path": "tests/contracts/live/gift-read/room-gift-list/contract.json"
+        },
+        {
+          "name": "live.room_info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/room/v1/Room/get_info",
+          "source_path": "tests/contracts/live/public-core/room-info/contract.json"
+        },
+        {
+          "name": "live.shield_keywords",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://api.live.bilibili.com/xlive/app-ucenter/v1/banned/GetShieldKeywordList",
+          "source_path": "tests/contracts/live/moderation-private-read/shield-keywords/contract.json"
+        },
+        {
+          "name": "live.silent_users",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://api.live.bilibili.com/xlive/web-ucenter/v1/banned/GetSilentUserList",
+          "source_path": "tests/contracts/live/moderation-private-read/silent-users/contract.json"
+        },
+        {
+          "name": "live.stream",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/room/v1/Room/playUrl",
+          "source_path": "tests/contracts/live/public-core/stream/contract.json"
+        },
+        {
+          "name": "live.version",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/app-blink/v1/liveVersionInfo/getHomePageLiveVersion",
+          "source_path": "tests/contracts/live/public-core/version/contract.json"
+        },
+        {
+          "name": "live.web_heart_beat",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://live-trace.bilibili.com/xlive/rdata-interface/v1/heartbeat/webHeartBeat",
+          "source_path": "tests/contracts/live/telemetry-read/heartbeat/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "source_methods": [
+        "account_info",
+        "coin",
+        "daily_reward",
+        "generate_captcha",
+        "log",
+        "nav",
+        "notice",
+        "qr_generate",
+        "qr_poll",
+        "stat",
+        "today_coin_exp",
+        "vip_info"
+      ],
+      "contracts": [
+        {
+          "name": "login.account_info",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/member/web/account",
+          "source_path": "tests/contracts/login/account-info/contract.json"
+        },
+        {
+          "name": "login.captcha_generate",
+          "risk": "login-session",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://passport.bilibili.com/x/passport-login/captcha",
+          "source_path": "tests/contracts/login/captcha/generate/contract.json"
+        },
+        {
+          "name": "login.coin",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://account.bilibili.com/site/getCoin",
+          "source_path": "tests/contracts/login/coin/contract.json"
+        },
+        {
+          "name": "login.daily_reward",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/member/web/exp/reward",
+          "source_path": "tests/contracts/login/daily-reward/contract.json"
+        },
+        {
+          "name": "login.log",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/member/web/login/log",
+          "source_path": "tests/contracts/login/notice/login-log/contract.json"
+        },
+        {
+          "name": "login.nav",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/nav",
+          "source_path": "tests/contracts/login/nav/contract.json"
+        },
+        {
+          "name": "login.notice",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/safecenter/login_notice",
+          "source_path": "tests/contracts/login/notice/login-notice/contract.json"
+        },
+        {
+          "name": "login.qr.flow",
+          "risk": "login-session",
+          "status": "promoted",
+          "method": "",
+          "url": "",
+          "source_path": "tests/contracts/login/qr/flow/contract.json"
+        },
+        {
+          "name": "login.qr_generate",
+          "risk": "login-session",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://passport.bilibili.com/x/passport-login/web/qrcode/generate",
+          "source_path": "tests/contracts/login/qr/generate/contract.json"
+        },
+        {
+          "name": "login.qr_poll",
+          "risk": "login-session",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://passport.bilibili.com/x/passport-login/web/qrcode/poll",
+          "source_path": "tests/contracts/login/qr/poll/contract.json"
+        },
+        {
+          "name": "login.stat",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/nav/stat",
+          "source_path": "tests/contracts/login/stat/contract.json"
+        },
+        {
+          "name": "login.today_coin_exp",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/coin/today/exp",
+          "source_path": "tests/contracts/login/today-coin-exp/contract.json"
+        },
+        {
+          "name": "login.vip_info",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/vip/web/user/info",
+          "source_path": "tests/contracts/login/vip-info/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "manga",
+      "source_methods": [
+        "clock_in_info",
+        "coupons",
+        "point_products",
+        "season_info",
+        "user_point"
+      ],
+      "contracts": [
+        {
+          "name": "manga.clock_in_info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://manga.bilibili.com/twirp/activity.v1.Activity/GetClockInInfo",
+          "source_path": "tests/contracts/manga/read-core/clock-in-info/contract.json"
+        },
+        {
+          "name": "manga.coupons",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://manga.bilibili.com/twirp/user.v1.User/GetCoupons",
+          "source_path": "tests/contracts/manga/read-core/coupons/contract.json"
+        },
+        {
+          "name": "manga.point_products",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://manga.bilibili.com/twirp/pointshop.v1.Pointshop/ListProduct",
+          "source_path": "tests/contracts/manga/read-core/point-products/contract.json"
+        },
+        {
+          "name": "manga.season_info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://manga.bilibili.com/twirp/user.v1.Season/GetSeasonInfo",
+          "source_path": "tests/contracts/manga/read-core/season-info/contract.json"
+        },
+        {
+          "name": "manga.user_point",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://manga.bilibili.com/twirp/pointshop.v1.Pointshop/GetUserPoint",
+          "source_path": "tests/contracts/manga/read-core/user-point/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "source_methods": [
+        "reply_feed",
+        "single_unread",
+        "unread_count"
+      ],
+      "contracts": [
+        {
+          "name": "message.reply_feed",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/msgfeed/reply",
+          "source_path": "tests/contracts/message/read/reply-feed/contract.json"
+        },
+        {
+          "name": "message.single_unread",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.vc.bilibili.com/session_svr/v1/session_svr/single_unread",
+          "source_path": "tests/contracts/message/read/single-unread/contract.json"
+        },
+        {
+          "name": "message.unread_count",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.vc.bilibili.com/x/im/web/msgfeed/unread",
+          "source_path": "tests/contracts/message/read/unread-count/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "misc",
+      "source_methods": [
+        "b23_short_link",
+        "bili_ticket",
+        "bili_ticket_string",
+        "buvid",
+        "buvid3"
+      ],
+      "contracts": [
+        {
+          "name": "misc.b23tv.short_link",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://api.biliapi.net/x/share/click",
+          "source_path": "tests/contracts/misc/b23tv/short-link/contract.json"
+        },
+        {
+          "name": "misc.bili_ticket",
+          "risk": "login-session",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://api.bilibili.com/bapis/bilibili.api.ticket.v1.Ticket/GenWebTicket",
+          "source_path": "tests/contracts/misc/sign/bili-ticket/contract.json"
+        },
+        {
+          "name": "misc.buvid",
+          "risk": "login-session",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/frontend/finger/spi",
+          "source_path": "tests/contracts/misc/buvid/contract.json"
+        },
+        {
+          "name": "misc.buvid3",
+          "risk": "login-session",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-frontend/getbuvid",
+          "source_path": "tests/contracts/misc/buvid3/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "note",
+      "source_methods": [
+        "archive_list",
+        "is_forbid",
+        "private_info",
+        "public_archive_list",
+        "public_info",
+        "user_private_list",
+        "user_public_list"
+      ],
+      "contracts": [
+        {
+          "name": "note.archive_list",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/note/list/archive",
+          "source_path": "tests/contracts/note/read/archive-list/contract.json"
+        },
+        {
+          "name": "note.is_forbid",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/note/is_forbid",
+          "source_path": "tests/contracts/note/read/is-forbid/contract.json"
+        },
+        {
+          "name": "note.private_info",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/note/info",
+          "source_path": "tests/contracts/note/read/private-info/contract.json"
+        },
+        {
+          "name": "note.public_archive_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/note/publish/list/archive",
+          "source_path": "tests/contracts/note/read/public-archive-list/contract.json"
+        },
+        {
+          "name": "note.public_info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/note/publish/info",
+          "source_path": "tests/contracts/note/read/public-info/contract.json"
+        },
+        {
+          "name": "note.user_private_list",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/note/list",
+          "source_path": "tests/contracts/note/read/user-private-list/contract.json"
+        },
+        {
+          "name": "note.user_public_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/note/publish/list/user",
+          "source_path": "tests/contracts/note/read/user-public-list/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "opus",
+      "source_methods": [
+        "space_feed"
+      ],
+      "contracts": [
+        {
+          "name": "opus.space_feed",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/opus/feed/space",
+          "source_path": "tests/contracts/opus/space-read/space-feed/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "source_methods": [
+        "article",
+        "bangumi",
+        "bili_user",
+        "default",
+        "hotwords",
+        "live",
+        "live_room",
+        "live_user",
+        "movie",
+        "suggest",
+        "video"
+      ],
+      "contracts": [
+        {
+          "name": "search.article",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+          "source_path": "tests/contracts/search/read/article/contract.json"
+        },
+        {
+          "name": "search.bangumi",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+          "source_path": "tests/contracts/search/read/bangumi/contract.json"
+        },
+        {
+          "name": "search.bili_user",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+          "source_path": "tests/contracts/search/read/bili-user/contract.json"
+        },
+        {
+          "name": "search.default",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/default",
+          "source_path": "tests/contracts/search/read/default/contract.json"
+        },
+        {
+          "name": "search.hotwords",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://s.search.bilibili.com/main/hotword",
+          "source_path": "tests/contracts/search/read/hotwords/contract.json"
+        },
+        {
+          "name": "search.live",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+          "source_path": "tests/contracts/search/read/live/contract.json"
+        },
+        {
+          "name": "search.live_room",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+          "source_path": "tests/contracts/search/read/live-room/contract.json"
+        },
+        {
+          "name": "search.live_user",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+          "source_path": "tests/contracts/search/read/live-user/contract.json"
+        },
+        {
+          "name": "search.movie",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+          "source_path": "tests/contracts/search/read/movie/contract.json"
+        },
+        {
+          "name": "search.suggest",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://s.search.bilibili.com/main/suggest",
+          "source_path": "tests/contracts/search/read/suggest/contract.json"
+        },
+        {
+          "name": "search.video",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+          "source_path": "tests/contracts/search/read/video/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "source_methods": [
+        "album_count",
+        "bangumi_follow_list",
+        "card",
+        "cards",
+        "follow_tags",
+        "followers",
+        "followings",
+        "infos",
+        "medal_wall",
+        "name_to_uid",
+        "nav_stat",
+        "relation_stat",
+        "space_info",
+        "space_notice",
+        "up_stat",
+        "uploaded_videos"
+      ],
+      "contracts": [
+        {
+          "name": "user.album_count",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.vc.bilibili.com/link_draw/v1/doc/upload_count",
+          "source_path": "tests/contracts/user/public-read/album-count/contract.json"
+        },
+        {
+          "name": "user.bangumi_follow_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/bangumi/follow/list",
+          "source_path": "tests/contracts/user/public-read/bangumi-follow-list/contract.json"
+        },
+        {
+          "name": "user.card",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/card",
+          "source_path": "tests/contracts/user/public-read/card/contract.json"
+        },
+        {
+          "name": "user.cards",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.vc.bilibili.com/account/v1/user/cards",
+          "source_path": "tests/contracts/user/public-read/cards/contract.json"
+        },
+        {
+          "name": "user.follow_tags",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/relation/tags",
+          "source_path": "tests/contracts/user/relation-read/follow-tags/contract.json"
+        },
+        {
+          "name": "user.followers",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/relation/fans",
+          "source_path": "tests/contracts/user/relation-read/followers/contract.json"
+        },
+        {
+          "name": "user.followings",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/relation/followings",
+          "source_path": "tests/contracts/user/relation-read/followings/contract.json"
+        },
+        {
+          "name": "user.infos",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.vc.bilibili.com/x/im/user_infos",
+          "source_path": "tests/contracts/user/public-read/infos/contract.json"
+        },
+        {
+          "name": "user.medal_wall",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-ucenter/user/MedalWall",
+          "source_path": "tests/contracts/user/public-read/medal-wall/contract.json"
+        },
+        {
+          "name": "user.name_to_uid",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/name-to-uid",
+          "source_path": "tests/contracts/user/public-read/name-to-uid/contract.json"
+        },
+        {
+          "name": "user.nav_stat",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/navnum",
+          "source_path": "tests/contracts/user/public-read/nav-stat/contract.json"
+        },
+        {
+          "name": "user.relation_stat",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/relation/stat",
+          "source_path": "tests/contracts/user/public-read/relation-stat/contract.json"
+        },
+        {
+          "name": "user.space_info",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/wbi/acc/info",
+          "source_path": "tests/contracts/user/public-read/space-info/contract.json"
+        },
+        {
+          "name": "user.space_notice",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/notice",
+          "source_path": "tests/contracts/user/public-read/space-notice/contract.json"
+        },
+        {
+          "name": "user.up_stat",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/upstat",
+          "source_path": "tests/contracts/user/public-read/up-stat/contract.json"
+        },
+        {
+          "name": "user.uploaded_videos",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/wbi/arc/search",
+          "source_path": "tests/contracts/user/public-read/uploaded-videos/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "video",
+      "source_methods": [
+        "ai_summary",
+        "desc",
+        "detail",
+        "home_seasons_series",
+        "homepage_recommendations",
+        "interactive_video_info",
+        "online_total",
+        "page_list",
+        "play_url",
+        "player_info_v2",
+        "related_videos",
+        "seasons_archives_list",
+        "seasons_series_list",
+        "series_archives",
+        "series_info",
+        "tags",
+        "view"
+      ],
+      "contracts": [
+        {
+          "name": "video.ai_summary",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/view/conclusion/get",
+          "source_path": "tests/contracts/video/player-read/ai-summary/contract.json"
+        },
+        {
+          "name": "video.collection.home_seasons_series",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-space/home/seasons_series",
+          "source_path": "tests/contracts/video/collection-read/home-seasons-series/contract.json"
+        },
+        {
+          "name": "video.collection.seasons_archives_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-space/seasons_archives_list",
+          "source_path": "tests/contracts/video/collection-read/seasons-archives-list/contract.json"
+        },
+        {
+          "name": "video.collection.seasons_series_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-space/seasons_series_list",
+          "source_path": "tests/contracts/video/collection-read/seasons-series-list/contract.json"
+        },
+        {
+          "name": "video.collection.series_archives",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/series/archives",
+          "source_path": "tests/contracts/video/collection-read/series-archives/contract.json"
+        },
+        {
+          "name": "video.collection.series_info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/series/series",
+          "source_path": "tests/contracts/video/collection-read/series-info/contract.json"
+        },
+        {
+          "name": "video.desc",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/archive/desc",
+          "source_path": "tests/contracts/video/info-read/desc/contract.json"
+        },
+        {
+          "name": "video.detail",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/view/detail",
+          "source_path": "tests/contracts/video/info-read/detail/contract.json"
+        },
+        {
+          "name": "video.homepage_recommendations",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/index/top/feed/rcmd",
+          "source_path": "tests/contracts/video/player-read/homepage-recommendations/contract.json"
+        },
+        {
+          "name": "video.interactive_video_info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/stein/edgeinfo_v2",
+          "source_path": "tests/contracts/video/player-read/interactive-info/contract.json"
+        },
+        {
+          "name": "video.online_total",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/player/online/total",
+          "source_path": "tests/contracts/video/player-read/online-total/contract.json"
+        },
+        {
+          "name": "video.pagelist",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/player/pagelist",
+          "source_path": "tests/contracts/video/info-read/pagelist/contract.json"
+        },
+        {
+          "name": "video.play_url",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/player/wbi/playurl",
+          "source_path": "tests/contracts/video/playurl/play-url/contract.json"
+        },
+        {
+          "name": "video.player_info_v2",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/player/wbi/v2",
+          "source_path": "tests/contracts/video/player-read/player-info-v2/contract.json"
+        },
+        {
+          "name": "video.related_videos",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/archive/related",
+          "source_path": "tests/contracts/video/player-read/related-videos/contract.json"
+        },
+        {
+          "name": "video.tags",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/view/detail/tag",
+          "source_path": "tests/contracts/video/player-read/tags/contract.json"
+        },
+        {
+          "name": "video.view",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/view",
+          "source_path": "tests/contracts/video/info-read/view/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "video_ranking",
+      "source_methods": [
+        "popular_list",
+        "popular_precious",
+        "popular_series_list",
+        "popular_series_one",
+        "ranking_list",
+        "region_dynamic",
+        "region_newlist",
+        "region_newlist_rank",
+        "region_tag_dynamic"
+      ],
+      "contracts": [
+        {
+          "name": "video_ranking.popular_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/popular",
+          "source_path": "tests/contracts/video_ranking/read/popular-list/contract.json"
+        },
+        {
+          "name": "video_ranking.popular_precious",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/popular/precious",
+          "source_path": "tests/contracts/video_ranking/read/popular-precious/contract.json"
+        },
+        {
+          "name": "video_ranking.popular_series_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/popular/series/list",
+          "source_path": "tests/contracts/video_ranking/read/popular-series-list/contract.json"
+        },
+        {
+          "name": "video_ranking.popular_series_one",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/popular/series/one",
+          "source_path": "tests/contracts/video_ranking/read/popular-series-one/contract.json"
+        },
+        {
+          "name": "video_ranking.ranking_list",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/ranking/v2",
+          "source_path": "tests/contracts/video_ranking/read/ranking-list/contract.json"
+        },
+        {
+          "name": "video_ranking.region_dynamic",
+          "risk": "authenticated-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/dynamic/region",
+          "source_path": "tests/contracts/video_ranking/read/region-dynamic/contract.json"
+        },
+        {
+          "name": "video_ranking.region_newlist",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/newlist",
+          "source_path": "tests/contracts/video_ranking/read/region-newlist/contract.json"
+        },
+        {
+          "name": "video_ranking.region_newlist_rank",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/newlist_rank",
+          "source_path": "tests/contracts/video_ranking/read/region-newlist-rank/contract.json"
+        },
+        {
+          "name": "video_ranking.region_tag_dynamic",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/dynamic/tag",
+          "source_path": "tests/contracts/video_ranking/read/region-tag-dynamic/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "vip",
+      "source_methods": [
+        "center_info"
+      ],
+      "contracts": [
+        {
+          "name": "vip.center_info",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/vip/web/vip_center/combine",
+          "source_path": "tests/contracts/vip/read/center-info/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "wallet",
+      "source_methods": [
+        "info"
+      ],
+      "contracts": [
+        {
+          "name": "wallet.info",
+          "risk": "private-read",
+          "status": "promoted",
+          "method": "POST",
+          "url": "https://pay.bilibili.com/paywallet/wallet/getUserWallet",
+          "source_path": "tests/contracts/wallet/read/info/contract.json"
+        }
+      ]
+    },
+    {
+      "name": "web_widget",
+      "source_methods": [
+        "header_page",
+        "online",
+        "region_banner"
+      ],
+      "contracts": [
+        {
+          "name": "web_widget.header_page",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-show/page/header",
+          "source_path": "tests/contracts/web_widget/header-page/contract.json"
+        },
+        {
+          "name": "web_widget.online",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/online",
+          "source_path": "tests/contracts/web_widget/online/contract.json"
+        },
+        {
+          "name": "web_widget.region_banner",
+          "risk": "public-read",
+          "status": "promoted",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-show/region/banner",
+          "source_path": "tests/contracts/web_widget/region-banner/contract.json"
+        }
+      ]
+    }
+  ]
+}
