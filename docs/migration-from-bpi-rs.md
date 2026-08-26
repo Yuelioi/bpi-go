@@ -1,6 +1,17 @@
 # 从 bpi-rs 迁移
 
-`bpi-go` 复现了 `bpi-rs` 0.2.4 提交 `36cb1104befee33b4281c59a4365d42dfdde45a4` 中已纳入对齐范围的行为。它是语义迁移，不是逐行源码翻译，也不是早期 Go 骨架的兼容层。
+`bpi-go` 复现了 `bpi-rs` 0.3.0 标签提交 `94bcf43e46d6e11b55ec4d36d4848692cecd4213` 中已纳入对齐范围的行为。它是语义迁移，不是逐行源码翻译，也不是早期 Go 骨架的兼容层。
+
+## 0.3 响应模型变化
+
+从旧基准迁移时，需要调整两个公开 Go 字段类型：
+
+- `video.DASHFLAC.Audio` 由切片改为 `*video.DASHStream`。上游 `flac.audio` 是单个音轨对象，无音轨时为 `null`；使用前应同时检查 `DASH.FLAC` 和 `DASH.FLAC.Audio`。
+- `bangumi.Detail.Total` 由 `uint32` 改为 `int32`，因为未知集数可能返回 `-1`。
+
+`bangumi.PlayURL.DURLs` 和 `cheese.PlayURL.DURLs` 的 Go 字段名保持不变，但现在从当前画质的 `durl` 数组解码，不再误读结构不同的 `durls` 画质分组。动态详情 ID 会把历史数字值规范化为文本，并把已删除原动态的 `null` ID 规范化为空字符串。
+
+对于非零 API code，若附带的 `data` 不符合成功响应模型，Go 客户端现在保留权威的 `APIError`，不会用 payload 解码错误遮蔽它。成功响应仍然严格解码；发生 schema 漂移时继续通过 `ResponseDecodeError.Body()` 提供显式恢复入口。
 
 ## 客户端构造
 

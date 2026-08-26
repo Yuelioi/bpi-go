@@ -116,7 +116,7 @@ type PlayURL struct {
 	VideoCodecID       uint8                 `json:"video_codecid"`
 	SeekParameter      string                `json:"seek_param"`
 	SeekType           string                `json:"seek_type"`
-	DURLs              []video.DURL          `json:"durls"`
+	DURLs              []video.DURL          `json:"durl"`
 	DASH               *video.DASH           `json:"dash"`
 	SupportFormats     []video.SupportFormat `json:"support_formats"`
 	Code               int32                 `json:"code"`

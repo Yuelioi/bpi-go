@@ -56,6 +56,13 @@ func (e *Envelope[T]) UnmarshalJSON(data []byte) error {
 	}
 	var value T
 	if err := json.Unmarshal(payload, &value); err != nil {
+		// Error envelopes sometimes carry partial or differently shaped data.
+		// Preserve the semantic API error instead of masking it with a model
+		// decode failure. Compatible non-zero payloads remain available through
+		// IntoData for the few protocols that intentionally expose them.
+		if e.Code != 0 {
+			return nil
+		}
 		return err
 	}
 	e.Data = &value

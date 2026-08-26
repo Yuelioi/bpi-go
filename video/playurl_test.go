@@ -53,3 +53,74 @@ func TestPlayURLAcceptsNegativeResumeSentinels(t *testing.T) {
 		t.Fatalf("resume sentinels = %d/%d", payload.LastPlayTime, payload.LastPlayCID)
 	}
 }
+
+func TestDASHFLACAcceptsNullableAndSingleStreamAudio(t *testing.T) {
+	t.Parallel()
+
+	var unavailable video.DASHFLAC
+	if err := json.Unmarshal([]byte(`{"display":true,"audio":null}`), &unavailable); err != nil {
+		t.Fatalf("Unmarshal(null FLAC audio) error = %v", err)
+	}
+	if unavailable.Display == nil || !*unavailable.Display || unavailable.Audio != nil {
+		t.Fatalf("null FLAC = %+v, want display=true and no audio", unavailable)
+	}
+
+	var available video.DASHFLAC
+	if err := json.Unmarshal([]byte(`{
+		"display":true,
+		"audio":{
+			"id":30251,
+			"baseUrl":"https://example.invalid/flac.m4s",
+			"backupUrl":[],
+			"bandwidth":1000,
+			"mimeType":"audio/mp4",
+			"codecs":"fLaC"
+		}
+	}`), &available); err != nil {
+		t.Fatalf("Unmarshal(single FLAC stream) error = %v", err)
+	}
+	if available.Audio == nil || available.Audio.ID != 30251 {
+		t.Fatalf("single FLAC audio = %+v, want stream 30251", available.Audio)
+	}
+}
+
+func TestPlayURLModelsAcceptNullBackupURLs(t *testing.T) {
+	t.Parallel()
+
+	var dash video.DASH
+	if err := json.Unmarshal([]byte(`{
+		"video":[{
+			"id":64,
+			"baseUrl":"https://example.invalid/video.m4s",
+			"backupUrl":null,
+			"bandwidth":1000,
+			"mimeType":"video/mp4",
+			"codecs":"avc1.640028"
+		}],
+		"audio":[],
+		"dolby":null,
+		"flac":null,
+		"duration":60
+	}`), &dash); err != nil {
+		t.Fatalf("Unmarshal(DASH null backupUrl) error = %v", err)
+	}
+	if len(dash.Video) != 1 || len(dash.Video[0].BackupURLs) != 0 {
+		t.Fatalf("DASH backup URLs = %+v, want empty", dash.Video)
+	}
+
+	var durl video.DURL
+	if err := json.Unmarshal([]byte(`{
+		"order":1,
+		"length":60000,
+		"size":1000000,
+		"ahead":"",
+		"vhead":"",
+		"url":"https://example.invalid/video.mp4",
+		"backup_url":null
+	}`), &durl); err != nil {
+		t.Fatalf("Unmarshal(DURL null backup_url) error = %v", err)
+	}
+	if len(durl.BackupURLs) != 0 {
+		t.Fatalf("DURL backup URLs = %+v, want empty", durl.BackupURLs)
+	}
+}

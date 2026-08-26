@@ -1,6 +1,6 @@
 # 源码与实现对齐
 
-`parity` 目录将首个 Go 公开接口锁定到 `bpi-rs` 0.2.4 的提交 `36cb1104befee33b4281c59a4365d42dfdde45a4`。
+`parity` 目录将当前 Go 公开接口锁定到 `bpi-rs` 0.3.0 标签提交 `94bcf43e46d6e11b55ec4d36d4848692cecd4213`。
 
 - `source.json` 是 27 个 Rust 领域客户端和 206 条已纳入契约的确定性清单。
 - `source.lock.json` 记录 Rust 仓库、提交版本和 Cargo 版本。
@@ -32,7 +32,7 @@ go run ./cmd/bpi-probe api-doc --check
 ```powershell
 go run ./cmd/bpi-sourcegen `
   -rust ../bpi-rs `
-  -expect-commit 36cb1104befee33b4281c59a4365d42dfdde45a4 `
+  -expect-commit 94bcf43e46d6e11b55ec4d36d4848692cecd4213 `
   -expect-domains 27 `
   -expect-contracts 206 `
   -check

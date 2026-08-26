@@ -1,6 +1,6 @@
 # bpi-go
 
-`bpi-go` 是 [`bpi-rs`](https://github.com/Yuelioi/bpi-rs) 的 Go 版本，用于访问哔哩哔哩 HTTP API。首个版本锁定到 `bpi-rs` 0.2.4 的提交 `36cb1104befee33b4281c59a4365d42dfdde45a4`，完整实现了 27 个领域客户端和全部 206 条已纳入对齐范围的契约。
+`bpi-go` 是 [`bpi-rs`](https://github.com/Yuelioi/bpi-rs) 的 Go 版本，用于访问哔哩哔哩 HTTP API。当前对齐基准为 `bpi-rs` 0.3.0 标签提交 `94bcf43e46d6e11b55ec4d36d4848692cecd4213`，完整实现了 27 个领域客户端和全部 206 条已纳入对齐范围的契约，并包含该版本针对历史动态、跨年代番剧和播放流响应的兼容性修复。
 
 本项目遵循常见的 Go 工程实践：
 

@@ -6,7 +6,7 @@ import "encoding/json"
 
 const (
 	SchemaVersion = 1
-	SourceCommit  = "36cb1104befee33b4281c59a4365d42dfdde45a4"
+	SourceCommit  = "94bcf43e46d6e11b55ec4d36d4848692cecd4213"
 )
 
 type SourceManifest struct {
