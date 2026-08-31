@@ -85,6 +85,35 @@ type DetailItem struct {
 	Visible  bool            `json:"visible"`
 }
 
+// UnmarshalJSON normalizes historical numeric dynamic IDs to text and keeps
+// deleted-original tombstones whose ID is null.
+func (item *DetailItem) UnmarshalJSON(data []byte) error {
+	var value struct {
+		ID       json.RawMessage `json:"id_str"`
+		Basic    Basic           `json:"basic"`
+		Modules  json.RawMessage `json:"modules"`
+		Original *DetailItem     `json:"orig"`
+		Type     string          `json:"type"`
+		Visible  bool            `json:"visible"`
+	}
+	if err := json.Unmarshal(data, &value); err != nil {
+		return err
+	}
+	id, err := decodeDynamicID(value.ID)
+	if err != nil {
+		return fmt.Errorf("dynamic id_str: %w", err)
+	}
+	*item = DetailItem{
+		ID:       id,
+		Basic:    value.Basic,
+		Modules:  value.Modules,
+		Original: value.Original,
+		Type:     value.Type,
+		Visible:  value.Visible,
+	}
+	return nil
+}
+
 type Reaction struct {
 	Action      string `json:"action"`
 	Attend      uint8  `json:"attend"`
@@ -398,4 +427,23 @@ func decodeNumericText(raw json.RawMessage) (string, error) {
 		return value, nil
 	}
 	return string(raw), nil
+}
+
+func decodeDynamicID(raw json.RawMessage) (string, error) {
+	raw = bytes.TrimSpace(raw)
+	if len(raw) == 0 || bytes.Equal(raw, []byte("null")) {
+		return "", nil
+	}
+	if raw[0] == '"' {
+		var value string
+		if err := json.Unmarshal(raw, &value); err != nil {
+			return "", err
+		}
+		return value, nil
+	}
+	var value json.Number
+	if err := json.Unmarshal(raw, &value); err != nil {
+		return "", fmt.Errorf("must be a string, number, or null: %w", err)
+	}
+	return value.String(), nil
 }

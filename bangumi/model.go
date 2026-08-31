@@ -79,7 +79,7 @@ type Detail struct {
 	Styles                []string         `json:"styles"`
 	Subtitle              string           `json:"subtitle"`
 	Title                 string           `json:"title"`
-	Total                 uint32           `json:"total"`
+	Total                 int32            `json:"total"`
 	Type                  uint32           `json:"type"`
 	UserStatus            *UserStatus      `json:"user_status"`
 	Activity              *json.RawMessage `json:"activity"`
@@ -193,6 +193,36 @@ type Stat struct {
 	VT         uint64  `json:"vt"`
 }
 
+// UnmarshalJSON accepts both the full season-stat names and the compact
+// section-episode aliases observed in historical responses.
+func (stat *Stat) UnmarshalJSON(data []byte) error {
+	type statAlias Stat
+	var value statAlias
+	if err := json.Unmarshal(data, &value); err != nil {
+		return err
+	}
+	var fields map[string]json.RawMessage
+	if err := json.Unmarshal(data, &fields); err != nil {
+		return err
+	}
+	if _, present := fields["coins"]; !present {
+		if raw, ok := fields["coin"]; ok {
+			if err := json.Unmarshal(raw, &value.Coins); err != nil {
+				return err
+			}
+		}
+	}
+	if _, present := fields["views"]; !present {
+		if raw, ok := fields["play"]; ok {
+			if err := json.Unmarshal(raw, &value.Views); err != nil {
+				return err
+			}
+		}
+	}
+	*stat = Stat(value)
+	return nil
+}
+
 type UserStatus struct {
 	AreaLimit   uint32 `json:"area_limit"`
 	Follow      uint32 `json:"follow"`
@@ -244,7 +274,7 @@ type PlayURL struct {
 	VideoCodecID       uint8                 `json:"video_codecid"`
 	SeekParameter      string                `json:"seek_param"`
 	SeekType           string                `json:"seek_type"`
-	DURLs              []video.DURL          `json:"durls"`
+	DURLs              []video.DURL          `json:"durl"`
 	DASH               *video.DASH           `json:"dash"`
 	SupportFormats     []video.SupportFormat `json:"support_formats"`
 	Code               uint32                `json:"code"`

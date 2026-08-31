@@ -183,9 +183,10 @@ func (dolby *DASHDolby) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-// DASHFLAC contains FLAC audio streams.
+// DASHFLAC describes an optional Hi-Res FLAC audio stream.
 type DASHFLAC struct {
-	Audio []DASHStream `json:"audio"`
+	Display *bool       `json:"display"`
+	Audio   *DASHStream `json:"audio"`
 }
 
 // DASHStream is one adaptive media stream.

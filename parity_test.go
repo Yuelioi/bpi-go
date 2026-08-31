@@ -39,7 +39,7 @@ func TestSourceManifestMatchesLockedPromotedSurface(t *testing.T) {
 	if manifest.SchemaVersion != 1 {
 		t.Fatalf("schema_version = %d, want 1", manifest.SchemaVersion)
 	}
-	if manifest.Source.Commit != "36cb1104befee33b4281c59a4365d42dfdde45a4" {
+	if manifest.Source.Commit != "94bcf43e46d6e11b55ec4d36d4848692cecd4213" {
 		t.Fatalf("source commit = %q, want locked bpi-rs commit", manifest.Source.Commit)
 	}
 	if manifest.Summary.DomainClients != 27 || len(manifest.Domains) != 27 {

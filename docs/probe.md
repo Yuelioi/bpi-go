@@ -73,7 +73,7 @@ Probe 不再定义或解析账户文件格式。认证配置必须通过对应�
 ```powershell
 go run ./cmd/bpi-sourcegen `
   -rust ../bpi-rs `
-  -expect-commit 36cb1104befee33b4281c59a4365d42dfdde45a4 `
+  -expect-commit 94bcf43e46d6e11b55ec4d36d4848692cecd4213 `
   -expect-domains 27 `
   -expect-contracts 206 `
   -check

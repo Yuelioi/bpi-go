@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
   "repository": "https://github.com/Yuelioi/bpi-rs",
-  "commit": "36cb1104befee33b4281c59a4365d42dfdde45a4",
-  "cargo_version": "0.2.4"
+  "commit": "94bcf43e46d6e11b55ec4d36d4848692cecd4213",
+  "cargo_version": "0.3.0"
 }

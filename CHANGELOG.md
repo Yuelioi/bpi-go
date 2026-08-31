@@ -4,6 +4,21 @@
 
 ## [Unreleased]（未发布）
 
+## [0.3.0] - 2026-08-27
+
+### 变更
+
+- 将对齐基准升级到 `bpi-rs` 0.3.0 标签提交 `94bcf43e46d6e11b55ec4d36d4848692cecd4213`；27 个领域、206 条契约、风险分类和 642 个契约快照文件均保持不变。
+- **破坏性变更**：`video.DASHFLAC.Audio` 从 `[]video.DASHStream` 改为 `*video.DASHStream`，与上游 FLAC 单对象或 `null` 形态一致，并新增可选 `Display` 字段。
+- **破坏性变更**：`bangumi.Detail.Total` 从 `uint32` 改为 `int32`，保留未知集数的 `-1` 哨兵。
+
+### 修复
+
+- 非零 API code 携带不兼容的部分 `data` 时优先返回 `APIError`，不再被成功模型的 `ResponseDecodeError` 遮蔽；兼容的非零 payload 仍可通过显式 `IntoData` 读取。
+- 兼容历史动态中的数字 ID，以及已删除转发原动态的 `null` ID 占位对象。
+- 修正番剧和课程播放流把当前画质 `durl` 误读为画质分组 `durls` 的问题。
+- 兼容 FLAC 单音轨/空音轨、DASH 与 MP4 的 `null` 备用地址、番剧精简统计的 `coin`/`play` 字段，以及未开播和历史番剧的缺省字段。
+
 ## [0.1.0] - 2026-08-11
 
 ### 新增
@@ -34,5 +49,6 @@
 - 包含秘密的查询字段和原始响应体不会进入日志或普通错误格式。
 - 实时 Probe 无法执行登录会话、写入或消费类契约。
 
-[Unreleased]: https://github.com/Yuelioi/bpi-go/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/Yuelioi/bpi-go/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/Yuelioi/bpi-go/compare/v0.1.0...v0.3.0
 [0.1.0]: https://github.com/Yuelioi/bpi-go/releases/tag/v0.1.0

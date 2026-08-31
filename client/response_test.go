@@ -65,6 +65,35 @@ func TestEnvelopeReturnsSemanticAPIErrors(t *testing.T) {
 	}
 }
 
+func TestEnvelopePrioritizesAPIErrorOverIncompatibleErrorPayload(t *testing.T) {
+	t.Parallel()
+
+	envelope, err := bpi.DecodeEnvelope[fixturePayload]([]byte(`{"code":-352,"message":"risk control","data":{"aid":"not-a-number"}}`))
+	if err != nil {
+		t.Fatalf("DecodeEnvelope() error = %v, want API envelope", err)
+	}
+	_, err = envelope.IntoPayload()
+	if !bpi.IsRiskControl(err) {
+		t.Fatalf("IsRiskControl(%v) = false, want true", err)
+	}
+}
+
+func TestEnvelopeRetainsCompatibleDataForExplicitUncheckedExtraction(t *testing.T) {
+	t.Parallel()
+
+	envelope, err := bpi.DecodeEnvelope[fixturePayload]([]byte(`{"code":-1,"message":"pending","data":{"title":"state","aid":7}}`))
+	if err != nil {
+		t.Fatalf("DecodeEnvelope() error = %v", err)
+	}
+	payload, err := envelope.IntoData()
+	if err != nil {
+		t.Fatalf("IntoData() error = %v", err)
+	}
+	if payload.Title != "state" || payload.AID != 7 {
+		t.Fatalf("IntoData() = %+v, want retained business state", payload)
+	}
+}
+
 func TestEnvelopeDistinguishesMissingAndOptionalPayload(t *testing.T) {
 	t.Parallel()
 
