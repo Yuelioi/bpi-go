@@ -16,6 +16,9 @@
 # Live probe output must never be committed
 /probe-output/
 
+# Local multi-session work notes
+/flightdeck/
+
 # Editor and operating-system state
 /.idea/
 /.vscode/
