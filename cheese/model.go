@@ -126,10 +126,27 @@ type PlayURL struct {
 	Type               string                `json:"type"`
 	HasPaid            bool                  `json:"has_paid"`
 	IsPreview          *uint32               `json:"is_preview"`
+	IsDRM              *bool                 `json:"is_drm"`
+	DRMType            *string               `json:"drm_type"`
+	DRMTechType        *uint32               `json:"drm_tech_type"`
+	HLS                *HLSStreams           `json:"hls"`
 	NoRecode           int32                 `json:"no_rexcode"`
 	Status             int32                 `json:"status"`
 	Fragments          []FragmentVideo       `json:"fragment_videos"`
 	Volume             *Volume               `json:"volume"`
+}
+
+// HLSStreams describes course HLS tracks. A populated HLS response may still
+// be DRM protected; callers should inspect PlayURL.IsDRM before using it.
+type HLSStreams struct {
+	Video []HLSTrack `json:"video"`
+	Audio []HLSTrack `json:"audio"`
+}
+
+// HLSTrack is one course HLS video or audio track.
+type HLSTrack struct {
+	ID        uint32 `json:"id"`
+	StreamURL string `json:"stream_url"`
 }
 
 type FragmentVideo struct {
